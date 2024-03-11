@@ -1,0 +1,168 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sBin.Declare(String)
+Variable.Global.sJob.Declare(String)
+Variable.Global.sSuf.Declare(String)
+Variable.Global.sSeq.Declare(String)
+Variable.Global.sPart.Declare(String)
+Variable.Global.iQty.Declare(Float)
+Variable.Global.sLoc.Declare(String)
+Variable.Global.sLot.Declare(String)
+Variable.Global.sHeat.Declare(String)
+Variable.Global.sSerial.Declare(String)
+
+Variable.Global.sDesc.Declare(String)
+Variable.Global.sProject.Declare(String)
+Variable.Global.sPhase.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'2. An additional GAB script will be added to the new hook (see below) that will fire on the issue
+'material mobile transaction to check if the suffix = '007' and the phase = 'E'. If these values are
+'met, the program will automatically create the record in the custom table (Ref: Table "1") using bin
+'"SHPCMP".
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.CallSub(Getpassedvars)
+F.Intrinsic.Control.CallSub(Process)
+
+F.ODBC.Connection!conX.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_BIN_ISSUE_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.GetPassedVars.Start
+F.Intrinsic.Control.SetErrorHandler("GetPassedVars_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+'Needed Vars
+V.Global.sBin.Set(V.Passed.BIN)
+V.Global.iQty.Set(V.Passed.QUANTITY)
+V.Global.sJob.Set(V.Passed.JOB)
+V.Global.sSuf.Set(V.Passed.SUFF)
+V.Global.sSeq.Set(V.Passed.SEQ)
+V.Global.sPart.Set(V.Passed.PART)
+V.Global.sLoc.Set(V.Passed.LOC)
+V.Global.sLot.Set(V.Passed.LOT)
+V.Global.sHeat.Set(V.Passed.HEAT)
+V.Global.sSerial.Set(V.Passed.SERIAL)
+'Temp Work around because new hook is trimming off part passed variable. 4/15/2015 SFF
+F.Intrinsic.String.Build("Select Part from v_job_operations where ltrim(rtrim(Job)) = '{0}' and Suffix = '{1}' and Seq = '{2}'",V.Global.sJob.Trim,V.Global.sSuf.Trim,V.Global.sSeq.Trim,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	V.Global.sPart.Set(V.ODBC.conX!rst.FieldValTrim!Part)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GetPassedVars_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_BIN_ISSUE_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GetPassedVars.End
+
+Program.Sub.Process.Start
+F.Intrinsic.Control.SetErrorHandler("Process_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.iRet.Declare(Float)
+
+'Format current date
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+
+'If Phase = E and Seq = 007, then save record to GCG_3992_WIP_BIN
+F.Intrinsic.Control.If(V.Global.sSuf.Trim,=,"007")
+	
+	'Get Phase from JOB HEADER
+	F.Intrinsic.String.Build("Select PROJECT, PHASE from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",V.Global.sJob,V.Global.sSuf,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.FieldValTrim!PHASE,=,"E")
+			'Set Project and Phase info to save to custom table
+			V.Global.sProject.Set(V.ODBC.conX!rst.FieldValTrim!PROJECT)
+			V.Global.sPhase.Set(V.ODBC.conX!rst.FieldValTrim!PHASE)
+			'Get Part Description
+			F.Intrinsic.String.Build("Select Description from V_INVENTORY_MSTR where PART = '{0}'",V.Global.sPart,V.Local.sSql)
+			F.ODBC.Connection!conX.OpenRecordsetRO("rstInv",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.conX!rstInv.EOF,<>,True)
+				V.Global.sDesc.Set(V.ODBC.conX!rstInv.FieldValTrim!DESCRIPTION)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conX!rstInv.Close
+			'Build SQL to see if record exists for this job,suf,seq,part,bin
+			F.Intrinsic.String.Build("SELECT * from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and PART = '{3}' and BIN = '{4}'",V.Global.sJob,V.Global.sSuf,V.Global.sSeq,V.Global.sPart,"SHPCMP",V.Local.sSql)
+			F.ODBC.Connection!conX.OpenRecordsetRW("rstSave",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.conX!rstSave.EOF,<>,True)
+				'Update Qty if Existing Record
+				F.Intrinsic.Math.Add(V.ODBC.conX!rstSave.FieldVal!QTY_BIN,V.Global.iQty,V.Local.iRet)
+				F.ODBC.conX!rstSave.Set!QTY_BIN(V.Local.iRet)
+				F.ODBC.conX!rstSave.Set!DATE_WIPBIN(V.Local.sDate)
+				F.ODBC.conX!rstSave.Update
+				F.ODBC.conX!rstSave.Close
+			F.Intrinsic.Control.Else
+				'Create New Record
+				F.ODBC.conX!rstSave.Close
+				F.ODBC.Connection!conX.OpenRecordsetRW("rstSave","Select * from GCG_3992_WIP_BIN")
+				F.ODBC.conX!rstSave.AddNew
+				F.ODBC.conX!rstSave.Set!JOB(V.Global.sJob)
+				F.ODBC.conX!rstSave.Set!SUFFIX(V.Global.sSuf)
+				F.ODBC.conX!rstSave.Set!SEQUENCE(V.Global.sSeq)
+				F.ODBC.conX!rstSave.Set!PART(V.Global.sPart)
+				F.ODBC.conX!rstSave.Set!LOCATION(V.Global.sLoc.Trim)
+				F.ODBC.conX!rstSave.Set!BIN("SHPCMP")
+				F.ODBC.conX!rstSave.Set!DESCRIPTION(V.Global.sDesc)
+				F.ODBC.conX!rstSave.Set!QTY_BIN(V.Global.iQty)
+				F.ODBC.conX!rstSave.Set!DATE_WIPBIN(V.Local.sDate)
+				F.ODBC.conX!rstSave.Set!PROJECT(V.Global.sProject)
+				F.ODBC.conX!rstSave.Set!PHASE(V.Global.sPhase)
+				F.ODBC.conX!rstSave.Update
+				F.ODBC.conX!rstSave.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Endif
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Process_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_BIN_ISSUE_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Process.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_BIN_ISSUE_MOBILE$}$SUPERVSR$}$3/25/2015$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$2. An additional GAB script will be added to the new hook (see below) that will fire on the issue
+material mobile transaction to check if the suffix = '007' and the phase = 'E'. If these values are
+met, the program will automatically create the record in the custom table (Ref: Table "1") using bin
+"SHPCMP".
+Program.Sub.Comments.End
+
