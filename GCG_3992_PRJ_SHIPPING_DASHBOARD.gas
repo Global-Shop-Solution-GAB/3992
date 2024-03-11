@@ -1,0 +1,2712 @@
+Program.Sub.ScreenSU.Start
+gui.SS_F_JobsIncomplete..create
+gui.SS_F_JobsIncomplete..caption("Jobs Incomplete")
+gui.SS_F_JobsIncomplete..size(3180,4590)
+gui.SS_F_JobsIncomplete..minx(0)
+gui.SS_F_JobsIncomplete..miny(0)
+gui.SS_F_JobsIncomplete..position(0,0)
+gui.SS_F_JobsIncomplete..event(unload,ss_f_jobsincomplete_unload)
+gui.SS_F_JobsIncomplete..alwaysontop(False)
+gui.SS_F_JobsIncomplete..fontname("Arial")
+gui.SS_F_JobsIncomplete..fontsize(8)
+gui.SS_F_JobsIncomplete..forecolor(0)
+gui.SS_F_JobsIncomplete..fontstyle(,,,,)
+gui.SS_F_JobsIncomplete..BackColor(-2147483633)
+gui.SS_F_JobsIncomplete..controlbox(True)
+gui.SS_F_JobsIncomplete..maxbutton(False)
+gui.SS_F_JobsIncomplete..minbutton(False)
+gui.SS_F_JobsIncomplete..mousepointer(0)
+gui.SS_F_JobsIncomplete..moveable(True)
+gui.SS_F_JobsIncomplete..sizeable(False)
+gui.SS_F_JobsIncomplete..ShowInTaskBar(True)
+gui.SS_F_JobsIncomplete..titlebar(True)
+gui.SS_F_JobsIncomplete.lbl_lvwJobs.create(label,"Incomplete Work Orders",True,1800,200,1,100,135,True,0,Arial,8,-2147483633,0)
+gui.SS_F_JobsIncomplete.lbl_lvwJobs.defaultvalue("")
+gui.SS_F_JobsIncomplete.lbl_lvwJobs.controlgroup(0)
+gui.SS_F_JobsIncomplete.lvwJobs.create(listview)
+gui.SS_F_JobsIncomplete.lvwJobs.view(2)
+gui.SS_F_JobsIncomplete.lvwJobs.visible(True)
+gui.SS_F_JobsIncomplete.lvwJobs.size(2730,3515)
+gui.SS_F_JobsIncomplete.lvwJobs.zorder(0)
+gui.SS_F_JobsIncomplete.lvwJobs.position(100,335)
+gui.SS_F_JobsIncomplete.lvwJobs.enabled(True)
+gui.SS_F_JobsIncomplete.lvwJobs.fontname("Arial")
+gui.SS_F_JobsIncomplete.lvwJobs.fontsize(8)
+gui.SS_F_JobsIncomplete.lvwJobs.event(dblclick,lvwjobs_click)
+
+
+gui.SS_F_ShipTo..create
+gui.SS_F_ShipTo..caption("Review Shipment")
+gui.SS_F_ShipTo..size(19275,6405)
+gui.SS_F_ShipTo..minx(0)
+gui.SS_F_ShipTo..miny(0)
+gui.SS_F_ShipTo..position(0,0)
+gui.SS_F_ShipTo..event(unload,ss_f_shipto_unload)
+gui.SS_F_ShipTo..alwaysontop(False)
+gui.SS_F_ShipTo..fontname("Arial")
+gui.SS_F_ShipTo..fontsize(8)
+gui.SS_F_ShipTo..forecolor(0)
+gui.SS_F_ShipTo..fontstyle(,,,,)
+gui.SS_F_ShipTo..BackColor(-2147483633)
+gui.SS_F_ShipTo..controlbox(True)
+gui.SS_F_ShipTo..maxbutton(False)
+gui.SS_F_ShipTo..minbutton(False)
+gui.SS_F_ShipTo..mousepointer(0)
+gui.SS_F_ShipTo..moveable(True)
+gui.SS_F_ShipTo..sizeable(True)
+gui.SS_F_ShipTo..ShowInTaskBar(True)
+gui.SS_F_ShipTo..titlebar(True)
+gui.SS_F_ShipTo.lbl_txtShipToID.create(label,"Ship-To ID",True,1005,200,1,100,60,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtShipToID.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtShipToID.controlgroup(0)
+gui.SS_F_ShipTo.txtShipToID.create(textbox,"",True,1020,270,0,100,260,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtShipToID.defaultvalue("")
+gui.SS_F_ShipTo.txtShipToID.controlgroup(0)
+gui.SS_F_ShipTo.cmd_txtShipToID.create(button)
+gui.SS_F_ShipTo.cmd_txtShipToID.caption("^")
+gui.SS_F_ShipTo.cmd_txtShipToID.visible(True)
+gui.SS_F_ShipTo.cmd_txtShipToID.size(330,300)
+gui.SS_F_ShipTo.cmd_txtShipToID.zorder(0)
+gui.SS_F_ShipTo.cmd_txtShipToID.position(1200,270)
+gui.SS_F_ShipTo.cmd_txtShipToID.enabled(True)
+gui.SS_F_ShipTo.cmd_txtShipToID.fontname("Arial")
+gui.SS_F_ShipTo.cmd_txtShipToID.fontsize(8)
+gui.SS_F_ShipTo.cmd_txtShipToID.event(click,cmd_txtshiptoid_click)
+gui.SS_F_ShipTo.cmd_txtShipToID.defaultvalue("")
+gui.SS_F_ShipTo.cmd_txtShipToID.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtName.create(label,"Name",True,1800,200,1,100,600,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtName.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtName.controlgroup(0)
+gui.SS_F_ShipTo.txtName.create(textbox,"",True,2985,330,0,100,800,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtName.defaultvalue("")
+gui.SS_F_ShipTo.txtName.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAddr1.create(label,"Address 1",True,1860,215,1,130,1105,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAddr1.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAddr1.controlgroup(0)
+gui.SS_F_ShipTo.txtAddr1.create(textbox,"",True,3000,330,0,100,1300,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAddr1.defaultvalue("")
+gui.SS_F_ShipTo.txtAddr1.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAddr2.create(label,"Address 2",True,1800,200,1,100,1700,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAddr2.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAddr2.controlgroup(0)
+gui.SS_F_ShipTo.txtAddr2.create(textbox,"",True,3000,330,0,100,1900,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAddr2.defaultvalue("")
+gui.SS_F_ShipTo.txtAddr2.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAddr3.create(label,"Address 3",True,1800,200,1,115,2305,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAddr3.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAddr3.controlgroup(0)
+gui.SS_F_ShipTo.txtAddr3.create(textbox,"",True,3000,330,0,100,2500,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAddr3.defaultvalue("")
+gui.SS_F_ShipTo.txtAddr3.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAddr4.create(label,"Address 4",True,1800,200,1,100,2900,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAddr4.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAddr4.controlgroup(0)
+gui.SS_F_ShipTo.txtAddr4.create(textbox,"",True,3015,330,0,100,3165,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAddr4.defaultvalue("")
+gui.SS_F_ShipTo.txtAddr4.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAddr5.create(label,"Address 5",True,1800,200,1,100,3500,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAddr5.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAddr5.controlgroup(0)
+gui.SS_F_ShipTo.txtAddr5.create(textbox,"",True,3015,330,0,100,3700,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAddr5.defaultvalue("")
+gui.SS_F_ShipTo.txtAddr5.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtCity.create(label,"City",True,1800,200,1,100,4100,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtCity.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtCity.controlgroup(0)
+gui.SS_F_ShipTo.txtCity.create(textbox,"",True,1680,330,0,100,4300,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtCity.defaultvalue("")
+gui.SS_F_ShipTo.txtCity.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtState.create(label,"State",True,375,200,1,1900,4100,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtState.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtState.controlgroup(0)
+gui.SS_F_ShipTo.txtState.create(textbox,"",True,405,345,0,1900,4300,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtState.defaultvalue("")
+gui.SS_F_ShipTo.txtState.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtZip.create(label,"Zip",True,525,200,1,2400,4100,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtZip.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtZip.controlgroup(0)
+gui.SS_F_ShipTo.txtZip.create(textbox,"",True,720,330,0,2400,4300,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtZip.defaultvalue("")
+gui.SS_F_ShipTo.txtZip.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtCountry.create(label,"Country",True,1800,200,1,100,4700,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtCountry.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtCountry.controlgroup(0)
+gui.SS_F_ShipTo.txtCountry.create(textbox,"",True,750,330,0,100,4900,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtCountry.defaultvalue("")
+gui.SS_F_ShipTo.txtCountry.controlgroup(0)
+gui.SS_F_ShipTo.lbl_txtAttn.create(label,"Attention",True,1800,200,1,1000,4700,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_txtAttn.defaultvalue("")
+gui.SS_F_ShipTo.lbl_txtAttn.controlgroup(0)
+gui.SS_F_ShipTo.txtAttn.create(textbox,"",True,2130,330,0,1000,4900,False,0,Arial,8,16777215,1)
+gui.SS_F_ShipTo.txtAttn.defaultvalue("")
+gui.SS_F_ShipTo.txtAttn.controlgroup(0)
+gui.SS_F_ShipTo.cmdPrintPackList.create(button)
+gui.SS_F_ShipTo.cmdPrintPackList.caption("Print")
+gui.SS_F_ShipTo.cmdPrintPackList.visible(True)
+gui.SS_F_ShipTo.cmdPrintPackList.size(930,360)
+gui.SS_F_ShipTo.cmdPrintPackList.zorder(0)
+gui.SS_F_ShipTo.cmdPrintPackList.position(100,5375)
+gui.SS_F_ShipTo.cmdPrintPackList.enabled(True)
+gui.SS_F_ShipTo.cmdPrintPackList.fontname("Arial")
+gui.SS_F_ShipTo.cmdPrintPackList.fontsize(8)
+gui.SS_F_ShipTo.cmdPrintPackList.event(click,cmdprintpacklist_click)
+gui.SS_F_ShipTo.cmdPrintPackList.defaultvalue("")
+gui.SS_F_ShipTo.cmdPrintPackList.controlgroup(0)
+gui.SS_F_ShipTo.fg_RvwPackList.create(gsflexgrid)
+gui.SS_F_ShipTo.fg_RvwPackList.FixedRows(0)
+gui.SS_F_ShipTo.fg_RvwPackList.FixedCols(0)
+gui.SS_F_ShipTo.fg_RvwPackList.visible(True)
+gui.SS_F_ShipTo.fg_RvwPackList.size(8685,5415)
+gui.SS_F_ShipTo.fg_RvwPackList.zorder(0)
+gui.SS_F_ShipTo.fg_RvwPackList.position(3230,275)
+gui.SS_F_ShipTo.fg_RvwPackList.enabled(False)
+gui.SS_F_ShipTo.lbl_fgRvwPackList.create(label,"Items To be Shiped",True,2880,255,1,3230,60,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_fgRvwPackList.defaultvalue("")
+gui.SS_F_ShipTo.lbl_fgRvwPackList.controlgroup(0)
+gui.SS_F_ShipTo.txt_LineCost.create(textbox,"",True,1215,300,0,1800,260,True,0,Arial,8,-2147483643,1)
+gui.SS_F_ShipTo.txt_LineCost.numericonly(1)
+gui.SS_F_ShipTo.txt_LineCost.defaultvalue("0")
+gui.SS_F_ShipTo.txt_LineCost.controlgroup(0)
+gui.SS_F_ShipTo.lbl_LineCost.create(label,"Line Item Cost",True,1125,255,1,1800,60,True,0,Arial,8,-2147483633,0)
+gui.SS_F_ShipTo.lbl_LineCost.defaultvalue("")
+gui.SS_F_ShipTo.lbl_LineCost.controlgroup(0)
+
+
+gui.F_PrjPickList..create
+gui.F_PrjPickList..caption("Shipping Dashboard")
+gui.F_PrjPickList..size(15675,8910)
+gui.F_PrjPickList..minx(0)
+gui.F_PrjPickList..miny(0)
+gui.F_PrjPickList..position(0,0)
+gui.F_PrjPickList..event(unload,f_prjpicklist_unload)
+gui.F_PrjPickList..alwaysontop(False)
+gui.F_PrjPickList..fontname("Arial")
+gui.F_PrjPickList..fontsize(8)
+gui.F_PrjPickList..forecolor(0)
+gui.F_PrjPickList..fontstyle(,,,,)
+gui.F_PrjPickList..BackColor(-2147483633)
+gui.F_PrjPickList..controlbox(True)
+gui.F_PrjPickList..maxbutton(False)
+gui.F_PrjPickList..minbutton(False)
+gui.F_PrjPickList..mousepointer(0)
+gui.F_PrjPickList..moveable(True)
+gui.F_PrjPickList..sizeable(False)
+gui.F_PrjPickList..ShowInTaskBar(True)
+gui.F_PrjPickList..titlebar(True)
+gui.F_PrjPickList.fg_PickList.create(gsflexgrid)
+gui.F_PrjPickList.fg_PickList.FixedRows(0)
+gui.F_PrjPickList.fg_PickList.FixedCols(0)
+gui.F_PrjPickList.fg_PickList.visible(False)
+gui.F_PrjPickList.fg_PickList.size(12750,5925)
+gui.F_PrjPickList.fg_PickList.zorder(0)
+gui.F_PrjPickList.fg_PickList.position(2360,1510)
+gui.F_PrjPickList.fg_PickList.enabled(True)
+gui.F_PrjPickList.fg_PickList.event(posttextmatrix,fg_picklist_posttextmatrix)
+gui.F_PrjPickList.txtProject.create(textbox,"",True,1065,390,0,200,400,True,0,Arial,8,-2147483643,1)
+gui.F_PrjPickList.txtProject.event(keypressenter,txtproject_lostfocus)
+gui.F_PrjPickList.txtProject.event(lostfocus,txtproject_lostfocus)
+gui.F_PrjPickList.txtProject.defaultvalue("")
+gui.F_PrjPickList.txtProject.controlgroup(0)
+gui.F_PrjPickList.cmd_TxtProject.create(button)
+gui.F_PrjPickList.cmd_TxtProject.caption("^")
+gui.F_PrjPickList.cmd_TxtProject.visible(True)
+gui.F_PrjPickList.cmd_TxtProject.size(390,360)
+gui.F_PrjPickList.cmd_TxtProject.zorder(0)
+gui.F_PrjPickList.cmd_TxtProject.position(1300,450)
+gui.F_PrjPickList.cmd_TxtProject.enabled(True)
+gui.F_PrjPickList.cmd_TxtProject.fontname("Arial")
+gui.F_PrjPickList.cmd_TxtProject.fontsize(8)
+gui.F_PrjPickList.cmd_TxtProject.event(click,cmd_txtproject_click)
+gui.F_PrjPickList.cmd_TxtProject.defaultvalue("")
+gui.F_PrjPickList.cmd_TxtProject.controlgroup(0)
+gui.F_PrjPickList.ddlPhase.create(dropdownlist)
+gui.F_PrjPickList.ddlPhase.visible(True)
+gui.F_PrjPickList.ddlPhase.size(1275,330)
+gui.F_PrjPickList.ddlPhase.zorder(0)
+gui.F_PrjPickList.ddlPhase.position(1860,450)
+gui.F_PrjPickList.ddlPhase.enabled(False)
+gui.F_PrjPickList.ddlPhase.fontname("Arial")
+gui.F_PrjPickList.ddlPhase.fontsize(8)
+gui.F_PrjPickList.ddlPhase.defaultvalue("")
+gui.F_PrjPickList.ddlPhase.controlgroup(0)
+gui.F_PrjPickList.lblProject.create(label,"Project",True,870,330,1,215,95,True,0,Arial,12,-2147483633,0)
+gui.F_PrjPickList.lblProject.fontstyle(True,False,False,False)
+gui.F_PrjPickList.lblProject.defaultvalue("")
+gui.F_PrjPickList.lblProject.controlgroup(0)
+gui.F_PrjPickList.lbl2.create(label,"Phase",True,1320,255,1,1880,95,True,0,Arial,12,-2147483633,0)
+gui.F_PrjPickList.lbl2.fontstyle(True,False,False,False)
+gui.F_PrjPickList.lbl2.defaultvalue("")
+gui.F_PrjPickList.lbl2.controlgroup(0)
+gui.F_PrjPickList.ddlBin.create(dropdownlist)
+gui.F_PrjPickList.ddlBin.visible(False)
+gui.F_PrjPickList.ddlBin.size(1950,330)
+gui.F_PrjPickList.ddlBin.zorder(0)
+gui.F_PrjPickList.ddlBin.position(16200,7800)
+gui.F_PrjPickList.ddlBin.enabled(False)
+gui.F_PrjPickList.ddlBin.fontname("Arial")
+gui.F_PrjPickList.ddlBin.fontsize(12)
+gui.F_PrjPickList.ddlBin.fontstyle(True,False,False,False)
+gui.F_PrjPickList.ddlBin.defaultvalue("")
+gui.F_PrjPickList.ddlBin.controlgroup(0)
+gui.F_PrjPickList.lblBin.create(label,"Bin",True,1335,255,1,250,900,True,0,Arial,12,-2147483633,0)
+gui.F_PrjPickList.lblBin.fontstyle(True,False,False,False)
+gui.F_PrjPickList.lblBin.defaultvalue("")
+gui.F_PrjPickList.lblBin.controlgroup(0)
+gui.F_PrjPickList.cmdPrintPickList.create(button)
+gui.F_PrjPickList.cmdPrintPickList.caption("Pick List")
+gui.F_PrjPickList.cmdPrintPickList.visible(True)
+gui.F_PrjPickList.cmdPrintPickList.size(1080,780)
+gui.F_PrjPickList.cmdPrintPickList.zorder(0)
+gui.F_PrjPickList.cmdPrintPickList.position(4580,300)
+gui.F_PrjPickList.cmdPrintPickList.enabled(True)
+gui.F_PrjPickList.cmdPrintPickList.fontname("Arial")
+gui.F_PrjPickList.cmdPrintPickList.fontsize(8)
+gui.F_PrjPickList.cmdPrintPickList.event(click,cmdprintpicklist_click)
+gui.F_PrjPickList.cmdPrintPickList.defaultvalue("")
+gui.F_PrjPickList.cmdPrintPickList.controlgroup(0)
+gui.F_PrjPickList.cmdPackList.create(button)
+gui.F_PrjPickList.cmdPackList.caption("Packing List")
+gui.F_PrjPickList.cmdPackList.visible(True)
+gui.F_PrjPickList.cmdPackList.size(1170,780)
+gui.F_PrjPickList.cmdPackList.zorder(0)
+gui.F_PrjPickList.cmdPackList.position(5800,300)
+gui.F_PrjPickList.cmdPackList.enabled(False)
+gui.F_PrjPickList.cmdPackList.fontname("Arial")
+gui.F_PrjPickList.cmdPackList.fontsize(8)
+gui.F_PrjPickList.cmdPackList.event(click,cmdpacklist_click)
+gui.F_PrjPickList.cmdPackList.defaultvalue("")
+gui.F_PrjPickList.cmdPackList.controlgroup(0)
+gui.F_PrjPickList.cmdCompletePrj.create(button)
+gui.F_PrjPickList.cmdCompletePrj.caption("Complete Project")
+gui.F_PrjPickList.cmdCompletePrj.visible(True)
+gui.F_PrjPickList.cmdCompletePrj.size(1380,780)
+gui.F_PrjPickList.cmdCompletePrj.zorder(0)
+gui.F_PrjPickList.cmdCompletePrj.position(8690,300)
+gui.F_PrjPickList.cmdCompletePrj.enabled(True)
+gui.F_PrjPickList.cmdCompletePrj.fontname("Arial")
+gui.F_PrjPickList.cmdCompletePrj.fontsize(8)
+gui.F_PrjPickList.cmdCompletePrj.event(click,cmdcompleteprj_click)
+gui.F_PrjPickList.cmdCompletePrj.defaultvalue("")
+gui.F_PrjPickList.cmdCompletePrj.controlgroup(0)
+gui.F_PrjPickList.cmdProjectStatus.create(button)
+gui.F_PrjPickList.cmdProjectStatus.caption("Project Status")
+gui.F_PrjPickList.cmdProjectStatus.visible(True)
+gui.F_PrjPickList.cmdProjectStatus.size(1425,780)
+gui.F_PrjPickList.cmdProjectStatus.zorder(0)
+gui.F_PrjPickList.cmdProjectStatus.position(7100,300)
+gui.F_PrjPickList.cmdProjectStatus.enabled(True)
+gui.F_PrjPickList.cmdProjectStatus.fontname("Arial")
+gui.F_PrjPickList.cmdProjectStatus.fontsize(8)
+gui.F_PrjPickList.cmdProjectStatus.event(click,cmdprojectstatus_click)
+gui.F_PrjPickList.cmdProjectStatus.defaultvalue("")
+gui.F_PrjPickList.cmdProjectStatus.controlgroup(0)
+gui.F_PrjPickList.lblMsg.create(label,"Label",False,4740,270,1,2435,1150,True,0,Arial,12,-2147483633,0)
+gui.F_PrjPickList.lblMsg.fontstyle(True,False,False,False)
+gui.F_PrjPickList.lblMsg.ForeColor(255)
+gui.F_PrjPickList.lblMsg.defaultvalue("")
+gui.F_PrjPickList.lblMsg.controlgroup(0)
+gui.F_PrjPickList.scrollh1.create(hscrollbar)
+gui.F_PrjPickList.scrollh1.visible(False)
+gui.F_PrjPickList.scrollh1.size(8940,255)
+gui.F_PrjPickList.scrollh1.zorder(0)
+gui.F_PrjPickList.scrollh1.position(200,7800)
+gui.F_PrjPickList.scrollh1.enabled(False)
+gui.F_PrjPickList.scrollh1.event(click,scrollh1_change)
+gui.F_PrjPickList.scrollh1.event(scroll,scrollh1_scroll)
+gui.F_PrjPickList.cmdRefresh.create(button)
+gui.F_PrjPickList.cmdRefresh.caption("Refresh Results")
+gui.F_PrjPickList.cmdRefresh.visible(True)
+gui.F_PrjPickList.cmdRefresh.size(1275,780)
+gui.F_PrjPickList.cmdRefresh.zorder(0)
+gui.F_PrjPickList.cmdRefresh.position(3185,305)
+gui.F_PrjPickList.cmdRefresh.enabled(True)
+gui.F_PrjPickList.cmdRefresh.fontname("Arial")
+gui.F_PrjPickList.cmdRefresh.fontsize(8)
+gui.F_PrjPickList.cmdRefresh.event(click,cmdrefresh_click)
+gui.F_PrjPickList.cmdRefresh.defaultvalue("")
+gui.F_PrjPickList.cmdRefresh.controlgroup(0)
+gui.F_PrjPickList.lvwBin.create(listview)
+gui.F_PrjPickList.lvwBin.view(2)
+gui.F_PrjPickList.lvwBin.visible(True)
+gui.F_PrjPickList.lvwBin.size(1950,6195)
+gui.F_PrjPickList.lvwBin.zorder(0)
+gui.F_PrjPickList.lvwBin.position(190,1200)
+gui.F_PrjPickList.lvwBin.enabled(True)
+gui.F_PrjPickList.lvwBin.fontname("Arial")
+gui.F_PrjPickList.lvwBin.fontsize(8)
+gui.F_PrjPickList.lvwBin.event(lostfocus,lvwbin_itemclick)
+gui.F_PrjPickList.txtProject.tabstop(True)
+gui.F_PrjPickList.txtProject.tabindex(1)
+gui.F_PrjPickList.cmd_TxtProject.tabstop(True)
+gui.F_PrjPickList.cmd_TxtProject.tabindex(2)
+gui.F_PrjPickList.ddlPhase.tabstop(True)
+gui.F_PrjPickList.ddlPhase.tabindex(3)
+gui.F_PrjPickList.ddlBin.tabstop(True)
+gui.F_PrjPickList.ddlBin.tabindex(4)
+gui.F_PrjPickList.cmdRefresh.tabstop(True)
+gui.F_PrjPickList.cmdRefresh.tabindex(5)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sProject.Declare(String)
+Variable.UDT.uProject.Define("Job",String,Job)
+Variable.UDT.uProject.Define("Suffix",String,Suffix)
+Variable.UDT.uProject.Define("Part",String,Part)
+Variable.UDT.uProject.Define("Description",String,Description)
+Variable.UDT.uProject.Define("Staged",Float)
+Variable.UDT.uProject.Define("Qty_Order",Float,Qty_Order)
+Variable.UDT.uProject.Define("Date_Due",String,Date_Due)
+Variable.UDT.uProject.Define("Qty_Pick",Float)
+Variable.UDT.uProject.Define("Qty_Bin",Float)
+Variable.UDT.uProject.Define("Select",String)
+Variable.UDT.uProject.Define("QTY_SHIPPED",Float)
+Variable.UDT.uProject.Define("PHASE",String)
+Variable.UDT.uProject.Define("Sequence",String,Seq)
+Variable.uGlobal.uProject.Declare("uProject")
+Variable.Global.sCustomer.Declare(String)
+Variable.UDT.UPackHdr.Define("BIRUNID",Long)
+Variable.UDT.UPackHdr.Define("PROJECT",String,PROJECT)
+Variable.UDT.UPackHdr.Define("PACK_LIST_NO",Long,PACK_LIST_NO)
+Variable.UDT.UPackHdr.Define("DATE_SHIPPED",String,DATE_SHIPPED)
+Variable.UDT.UPackHdr.Define("CUSTOMER",String,CUSTOMER)
+Variable.UDT.UPackHdr.Define("NAME_CUSTOMER",String,NAME_CUSTOMER)
+Variable.UDT.UPackHdr.Define("BILL_ADDR1",String,BILL_ADDR1)
+Variable.UDT.UPackHdr.Define("BILL_ADDR2",String,BILL_ADDR2)
+Variable.UDT.UPackHdr.Define("BILL_ADDR3",String,BILL_ADDR3)
+Variable.UDT.UPackHdr.Define("BILL_ADDR4",String,BILL_ADDR4)
+Variable.UDT.UPackHdr.Define("BILL_ADDR5",String,BILL_ADDR5)
+Variable.UDT.UPackHdr.Define("BILL_CITY",String,BILL_CITY)
+Variable.UDT.UPackHdr.Define("BILL_STATE",String,BILL_STATE)
+Variable.UDT.UPackHdr.Define("BILL_ZIP",String,BILL_ZIP)
+Variable.UDT.UPackHdr.Define("BILL_COUNTRY",String,BILL_COUNTRY)
+Variable.UDT.UPackHdr.Define("BILL_ATTN",String,BILL_ATTN)
+Variable.UDT.UPackHdr.Define("SHIP_ADDR1",String,SHIP_ADDR1)
+Variable.UDT.UPackHdr.Define("SHIP_ADDR2",String,SHIP_ADDR2)
+Variable.UDT.UPackHdr.Define("SHIP_ADDR3",String,SHIP_ADDR3)
+Variable.UDT.UPackHdr.Define("SHIP_ADDR4",String,SHIP_ADDR4)
+Variable.UDT.UPackHdr.Define("SHIP_ADDR5",String,SHIP_ADDR5)
+Variable.UDT.UPackHdr.Define("SHIP_CITY",String,SHIP_CITY)
+Variable.UDT.UPackHdr.Define("SHIP_STATE",String,SHIP_STATE)
+Variable.UDT.UPackHdr.Define("SHIP_ZIP",String,SHIP_ZIP)
+Variable.UDT.UPackHdr.Define("SHIP_COUNTRY",String,SHIP_COUNTRY)
+Variable.UDT.UPackHdr.Define("SHIP_ATTN",String,SHIP_ATTN)
+Variable.uGlobal.uPackHdr.Declare("UPackHdr")
+Variable.UDT.uPackLines.Define("BIRUNID",Long)
+Variable.UDT.uPackLines.Define("PACK_LIST_NO",Long,PACK_LIST_NO)
+Variable.UDT.uPackLines.Define("PROJECT",String,PROJECT)
+Variable.UDT.uPackLines.Define("JOB",String,JOB)
+Variable.UDT.uPackLines.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.uPackLines.Define("JOB_SEQ",String,JOB_SEQ)
+Variable.UDT.uPackLines.Define("PART",String,PART)
+Variable.UDT.uPackLines.Define("UM",String,UM)
+Variable.UDT.uPackLines.Define("DESCRIPTION",String,DESCRIPTION)
+Variable.UDT.uPackLines.Define("QTY_ORDER",Float,QTY_ORDER)
+Variable.UDT.uPackLines.Define("QTY_BO",Float,QTY_BO)
+Variable.UDT.uPackLines.Define("QTY_SHIPPED",Float,QTY_SHIPPED)
+Variable.UDT.uPackLines.Define("DATE_SHIPPED",String)
+Variable.UDT.uPackLines.Define("QTY_STAGED",Float)
+Variable.UDT.uPackLines.Define("ITEM_NUM",Long)
+Variable.UDT.uPackLines.Define("PHASE",String)
+Variable.UDT.uPackLines.Define("QTY_PICKED",Float)
+Variable.UDT.uPackLines.Define("CODE_SORT",String)
+Variable.UDT.uPackLines.Define("BIN",String)
+Variable.Global.iBIRunID.Declare(Long,0)
+Variable.Global.iBILogID.Declare(Long,0)
+Variable.Global.iRptID.Declare(Long,0)
+Variable.uGlobal.uPackLines.Declare("uPackLines")
+Variable.Global.bIssue.Declare(Boolean,False)
+Variable.Global.iScroll.Declare(Long,0)
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,72000)
+F.Intrinsic.Control.CallSub(Frm_attributes)
+
+Gui.F_PrjPickList..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.BuildStyle.Start
+F.Intrinsic.Control.SetErrorHandler("BuildStyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRows.Declare(Float)
+
+Gui.F_PrjPickList.fg_PickList.Cols(12)
+Gui.F_PrjPickList.fg_PickList.Rows(1)
+Gui.F_PrjPickList.fg_PickList.Rows(2)
+Gui.F_PrjPickList.fg_PickList.FixedRows(1)
+'Gui.F_PrjPickList.fg_PickList.RowHeight(0,350)
+
+'Checkbox Select Row
+Gui.F_PrjPickList.fg_PickList.TextMatrix(0,0,"Select")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(2,0,"Format","Alignment",4)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,0,"Type","Checkbox","")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,0,"fontstyle","Size",10)
+
+'Job
+Gui.F_PrjPickList.fg_PickList.TextMatrix(1,0,"Job")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,1,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,1,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,1,"fontstyle","Size",10)
+
+'Suffix
+Gui.F_PrjPickList.fg_PickList.TextMatrix(2,0,"Suffix")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,2,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,2,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,2,"fontstyle","Size",10)
+'Sequence
+Gui.F_PrjPickList.fg_PickList.TextMatrix(3,0,"Seq")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,3,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,3,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,3,"fontstyle","Size",10)
+'Part
+Gui.F_PrjPickList.fg_PickList.TextMatrix(4,0,"Part")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,4,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,4,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,4,"fontstyle","Size",10)
+'Description
+Gui.F_PrjPickList.fg_PickList.TextMatrix(5,0,"Description")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,5,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,5,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,5,"fontstyle","Size",10)
+'WO Quantity
+Gui.F_PrjPickList.fg_PickList.TextMatrix(6,0,"Order Qty")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,6,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,6,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,6,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,6,"Color","Back",V.Color.Yellow)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,6,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,6,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,6,"fontstyle","Size",10)
+'Staged Quantity
+Gui.F_PrjPickList.fg_PickList.TextMatrix(7,0,"Stgd Qty")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,7,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,7,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,7,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(6,7,"Color","Back",V.Color.Yellow)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(6,7,"fontstyle","Size",10)
+
+'Pick Quantity
+Gui.F_PrjPickList.fg_PickList.TextMatrix(8,0,"Qty Pick")
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(1,8,"Format","Numeric",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,8,"Color","Back",V.Color.LtGray)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,8,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,8,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,8,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(4,8,"Color","Back",V.Color.LtRed)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(4,8,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(4,8,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(6,8,"Color","Back",V.Color.LtRed)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(6,8,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(6,8,"Type","Locked",True)
+'Quantity in Bin
+Gui.F_PrjPickList.fg_PickList.TextMatrix(9,0,"Qty Bin")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,9,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,9,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,9,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(4,9,"Color","Back",V.Color.Yellow)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(4,9,"fontstyle","Size",10)
+'Quantity Shipped
+Gui.F_PrjPickList.fg_PickList.TextMatrix(10,0,"Qty Shipd")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,10,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,10,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,10,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,10,"Color","Back",V.Color.ltRed)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(5,10,"fontstyle","Size",10)
+'Job Due Date
+Gui.F_PrjPickList.fg_PickList.TextMatrix(11,0,"Due Date")
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,11,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,11,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(1,11,"fontstyle","Size",10)
+
+Gui.F_PrjPickList.fg_PickList.SetColumnPercentages(".05:.05:.05:.05:.15:.2:.08:.08:.08:.08:.08:.1")
+Gui.F_PrjPickList.fg_PickList.ApplyStyle(0,2)
+Gui.F_PrjPickList.fg_PickList.ApplyStyle(1,1)
+
+
+'Style 7 for Locking Checkbox and Qty to Ship field if Qty order = Qty Shipped, used in CheckShipped Subroutine after loading Grid
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,0,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,8,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,8,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,8,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"Type","Locked",True)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"Color","Back",V.Color.ltRed)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"Format","Alignment",2)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"Color","Back",V.Color.ltRed)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"fontstyle","Size",10)
+Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"Format","Alignment",2)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BuildStyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.BuildStyle.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iRet.Declare(Long)
+'Print Report
+V.Local.sParams.Declare(String)
+V.Local.sParamVals.Declare(String)
+'Set cost param for packing list
+V.Local.sParams.Set("Cost")
+V.Local.sParamVals.Set(V.Screen.SS_F_ShipTo!txt_LineCost.Text)
+'Print packing list
+F.Global.BI.RunReportPreProcessor(V.Global.iBIRunID,V.Global.iBILogID,V.Local.sParams,V.Local.sParamVals,"",-1,False,"",-1,"",-1,"","",V.Global.iBILogID)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CallBI.End
+
+program.sub.f_prjpicklist_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_prjpicklist_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!conX.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_prjpicklist_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+program.sub.f_prjpicklist_unload.End
+
+program.sub.txtproject_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtproject_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+
+'Verify is valid project, if not clear and promt browser for project
+V.Local.sRet.Set(V.Screen.F_PrjPickList!txtProject.Text)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Build("Select Project,customer from v_project_master where project = '{0}'",V.Local.sRet.trim,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		V.Global.sProject.Set(V.ODBC.conX!rst.FieldValTrim!PROJECT)
+		V.Global.sCustomer.Set(V.ODBC.conX!rst.FieldValTrim!CUSTOMER)
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.CallSub(Load_ddlphase)
+		F.Intrinsic.Control.CallSub(Load_ddlbin)
+'		F.Intrinsic.Control.callsub(Loadgrid_rev)
+		Gui.F_PrjPickList.ddlPhase.Enabled(True)
+		Gui.F_PrjPickList.ddlBin.Enabled(True)
+
+	F.Intrinsic.Control.Else
+		'if not valid project prompt to browse for project
+		F.ODBC.conX!rst.Close
+		F.Intrinsic.Control.CallSub(Cmd_txtproject_click)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtproject_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtproject_lostfocus.End
+
+program.sub.cmd_txtproject_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtproject_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Browse Projects
+V.Local.sRet.Declare(String)
+
+Gui.F_PrjPickList.cmd_TxtProject.Enabled(False)
+
+'Project Common Browser
+F.Intrinsic.UI.Browser(2000,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	'If there is a return, process Return
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_PrjPickList.txtProject.Text(V.Local.sRet(0))
+	V.Global.sProject.Set(V.Local.sRet(0).Trim)
+	V.Global.sCustomer.Set(V.Local.sRet(2).Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Load_ddlphase)
+'Now Enable Phase Dropdown after its loaded
+Gui.F_PrjPickList.ddlPhase.Enabled(True)
+
+'Load Valid Bins that have records in the GCG_3992_WIP_BIN table for current prject
+F.Intrinsic.Control.CallSub(Load_ddlbin)
+Gui.F_PrjPickList.ddlBin.Enabled(True)
+
+
+Gui.F_PrjPickList.cmd_TxtProject.Enabled(True)
+
+'F.Intrinsic.Control.callsub(Loadgrid_rev)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtproject_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmd_txtproject_click.End
+
+program.sub.cmdpacklist_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdpacklist_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+'This sub fires Packing List Review Screen
+'Prompt user to choose from existing addresses.
+
+Gui.F_PrjPickList..Enabled(false)
+Gui.F_PrjPickList.fg_PickList.Commit
+
+'Set default line cost
+Gui.SS_F_ShipTo.txt_LineCost.Text(0.00)
+
+'Load Shipto info for Customer by default, but allow for them to choose from Add'd Ship To Addresses
+F.Intrinsic.Control.CallSub(Loadshipto,"ShipID","Default")
+'load selected items from Pick List Screen to Packing List Review Screen
+F.Intrinsic.Control.CallSub(Buildstyleshipto)
+F.Intrinsic.Control.CallSub(Load_fgrvwpacklist)
+
+'if 0 Rows Slected then exit sub
+F.Intrinsic.Control.If(V.Global.bIssue,=,True)
+	Gui.F_PrjPickList..Enabled(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Show Ship To Review Screen
+F.Intrinsic.String.Build("Review Ship-To info and Packing List for |Project:{0} | Customer:{1}|",V.Global.sProject.Trim,V.Global.sCustomer,V.Local.sRet)
+Gui.SS_F_ShipTo..Caption(V.Local.sRet)
+Gui.SS_F_ShipTo..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdpacklist_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdpacklist_click.End
+
+program.sub.cmdcompleteprj_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcompleteprj_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Will mark Date Completed with Current Date in the GCG_3992_WIP_BIN table
+V.Local.i.Declare(Float)
+V.Local.iRows.Declare(Float)
+V.Local.sRow.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.iOrder.Declare(Float)
+V.Local.iShipped.Declare(Float)
+V.Local.bComplete.Declare(Boolean)
+
+'format date for SQL
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+
+'set Boolean to true by default,
+V.Local.bComplete.Set(True)
+
+'Get Row Count
+V.Local.iRows.Set(V.Screen.F_PrjPickList!fg_PickList.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+'loop through rows, if qty shipped is < than qty order then ask user if they still want to continue
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRows,1)
+	Gui.F_PrjPickList.fg_PickList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(6),V.Local.iOrder)
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(10),V.Local.iShipped)
+	F.Intrinsic.Control.If(V.Local.iShipped,<,V.Local.iOrder)
+		'Color shipped cell and order cell
+		Gui.F_PrjPickList.fg_PickList.ApplyStyle(V.Local.i,5)
+		V.Local.bComplete.Set(False)
+	F.Intrinsic.Control.Else
+		Gui.F_PrjPickList.fg_PickList.ApplyStyle(V.Local.i,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'Prompt user, yes or no to continue if bComplete = False, else reload grid
+F.Intrinsic.Control.If(V.Local.bComplete,=,False)
+	F.Intrinsic.UI.Msgbox("Shipped Quantities < Order Quantities...Continue with Project Completion?","Continue?",4,V.Local.i)
+	F.Intrinsic.Control.If(V.Local.i,=,6)
+		F.Intrinsic.Control.CallSub(Completeproject)
+		F.Intrinsic.Control.callsub(Loadgrid_rev)
+	F.Intrinsic.Control.Else
+		'Reload Grid
+		F.Intrinsic.Control.callsub(Loadgrid_rev)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.callsub(Loadgrid_rev)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdcompleteprj_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdcompleteprj_click.End
+
+program.sub.cmdprojectstatus_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdprojectstatus_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'if Sequence 007 is involved, how are we supposed to compare that quantity of subcomponents with Order QTY
+V.Local.i.Declare(Float)
+V.Local.iRows.Declare(Float)
+V.Local.iOrder.Declare(Float)
+V.Local.iShipped.Declare(Float)
+V.Local.sRow.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.bComplete.Declare(Boolean)
+V.Local.iUB.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.bComplete.Set(True)
+
+Gui.F_PrjPickList..Visible(False)
+'clear list view
+Gui.SS_F_JobsIncomplete.lvwJobs.ClearItems
+
+V.Local.iUB.Set(-1)
+'IF Shipped Qty is less than Order Qty on any Work Order then Project Not Complete,
+F.Intrinsic.Math.Sub(V.Screen.F_PrjPickList!fg_PickList.Rows,1,V.Local.iRows)
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRows,1)
+	Gui.F_PrjPickList.fg_PickList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(10),V.Local.iShipped)
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(6),V.Local.iOrder)
+	F.Intrinsic.Control.If(V.Local.iShipped,<,V.Local.iOrder)
+		'add job-suffix to listview
+		F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+		F.Intrinsic.String.Build("{0}-{1}",V.Local.sRow(1),V.Local.sRow(2),V.Local.sRet)
+		Gui.SS_F_JobsIncomplete.lvwJobs.AddListItem(V.Local.iUB,V.Local.sRet)
+		V.Local.bComplete.Set(False)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.Intrinsic.Control.If(V.Local.bComplete,=,True)
+	V.Local.sRow.Set("Project Complete")
+	F.Intrinsic.UI.Msgbox(V.Local.sRow,"Project Status")
+	Gui.F_PrjPickList..Visible(True)
+F.Intrinsic.Control.Else
+	V.Local.sRow.Set("Project Not Complete")
+	Gui.SS_F_JobsIncomplete..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdprojectstatus_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdprojectstatus_click.End
+
+program.sub.ddlbin_click.start
+F.Intrinsic.Control.SetErrorHandler("ddlbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Reload Screen
+F.Intrinsic.Control.callsub(Loadgrid_rev)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddlbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.ddlbin_click.End
+
+program.sub.fg_picklist_posttextmatrix.start
+F.Intrinsic.Control.SetErrorHandler("fg_picklist_posttextmatrix_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.bStatus.Declare(Boolean)
+V.Local.iRet.Declare(Float)
+V.Local.iRet2.Declare(Float)
+V.Local.iCol.Declare(Float)
+
+V.Local.fRet8.declare(Float)
+V.Local.fRet7.declare(Float)
+V.Local.fRet6.declare(Float)
+
+'Check to see if Pick Qty is numeric , if not, reset to 0.00
+F.Intrinsic.Control.If(V.Args.Column,=,8)
+	'6 7 8
+	Gui.F_PrjPickList.fg_PickList.GetTextMatrix(8,V.Args.Key,V.Local.fRet8)
+	Gui.F_PrjPickList.fg_PickList.GetTextMatrix(7,V.Args.Key,V.Local.fRet7)
+	F.Intrinsic.Control.If(V.Local.fRet8,>,V.Local.fRet7)
+		F.Intrinsic.UI.Msgbox("Quantity cannot be greater than staged  qty")
+		Gui.F_PrjPickList.fg_PickList.TextMatrix(8,V.Args.Key,"0")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.Else
+		Gui.F_PrjPickList.fg_PickList.GetTextMatrix(6,V.Args.Key,V.Local.fRet6)
+		F.Intrinsic.Control.If(V.Local.fRet8,>,V.Local.fRet6)
+			F.Intrinsic.UI.Msgbox("Quantity cannot be greater than order qty")
+			Gui.F_PrjPickList.fg_PickList.TextMatrix(8,V.Args.Key,"0")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.endif
+
+
+	Gui.F_PrjPickList.fg_PickList.GetTextMatrix(V.Args.Column,V.Args.Key,V.Local.sRet)
+	F.Intrinsic.Math.IsNumeric(V.Local.sRet,V.Local.bStatus)
+	F.Intrinsic.Control.If(V.Local.bStatus,=,False)
+		Gui.F_PrjPickList.fg_PickList.TextMatrix(V.Args.Column,V.Args.Key,"0")
+	F.Intrinsic.Control.Else
+		'convert pick Qty to numeric for below
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sRet,V.Local.iRet)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fg_picklist_posttextmatrix_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.fg_picklist_posttextmatrix.End
+
+Program.Sub.Load_ddlPhase.Start
+F.Intrinsic.Control.SetErrorHandler("Load_ddlPhase_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_PrjPickList.ddlPhase.ClearItems
+'Load valid phases that are part of current project
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+
+Gui.F_PrjPickList.ddlPhase.AddItem("")
+F.Intrinsic.String.Build("Select Distinct PHASE from V_JOB_HEADER where PROJECT = '{0}' Order by PHASE",V.Global.sProject,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rstPhase",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rstPhase.EOF,<>,True)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conX!rstPhase.EOF,=,True)
+		Gui.F_PrjPickList.ddlPhase.AddItem(V.ODBC.conX!rstPhase.FieldValTrim!PHASE)
+	F.ODBC.conX!rstPhase.MoveNext
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rstPhase.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_ddlPhase_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Load_ddlPhase.End
+
+Program.Sub.Load_ddlBin.Start
+F.Intrinsic.Control.SetErrorHandler("Load_ddlBin_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.i.Declare(Long)
+
+Gui.F_PrjPickList.ddlBin.ClearItems
+'Load Valid bins and Quantities for all work orders with records in current Project
+F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlPhase.Text,=,"")
+	'if phase is blank select by project
+	F.Intrinsic.String.Build("Select Distinct BIN from GCG_3992_WIP_BIN where Project = '{0}'",V.Global.sProject.Trim,V.Local.sSql)
+F.Intrinsic.Control.Else
+	'if phase is not blank select by project and phase
+	F.Intrinsic.String.Build("Select Distinct BIN from GCG_3992_WIP_BIN where PROJECT = '{0}' and PHASE = '{1}'",V.Global.sProject.Trim,V.Screen.F_PrjPickList!ddlPhase.Text,V.Local.sSql)
+F.Intrinsic.Control.EndIf
+
+Gui.F_PrjPickList.lvwBin.ClearItems
+Gui.F_PrjPickList.lvwBin.Checkboxes(true)
+
+Gui.F_PrjPickList.ddlBin.AddItem("")
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	F.Intrinsic.Control.DoUntil(V.ODBC.conX!rst.EOF,=,True)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.FieldValTrim!BIN,<>,"SHPCMP")
+			Gui.F_PrjPickList.ddlBin.AddItem(V.ODBC.conX!rst.FieldValTrim!BIN)
+			Gui.F_PrjPickList.lvwBin.AddListItem(V.Local.i,V.ODBC.conX!rst.FieldValtrim!Bin)
+			F.Intrinsic.Math.Add(V.Local.i,1,V.Local.i)
+		F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.MoveNext
+	F.Intrinsic.Control.Loop
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_ddlBin_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Load_ddlBin.End
+
+program.sub.cmd_txtshiptoid_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtshiptoid_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.sSQL.Declare(String)
+V.Local.sCol.Declare(String)
+V.Local.sColW.Declare(String)
+V.Local.sRet.Declare(String)
+
+'Pass SQL Query
+F.Intrinsic.String.Build("Select SHIP_SEQ,CUSTOMER_NAME,SHIP_ADDRESS1,SHIP_ADDRESS2 from V_OE_MULTI_SHIP where CUSTOMER = '{0}'",V.Global.sCustomer,V.Local.sSQL)
+
+'Split Column Names into an array (VAR1, VAR2)
+F.Intrinsic.String.Split("SHIPTO ID*!*NAME*!*ADDRESS1*!*ADDRESS2","*!*",V.Local.sCol)
+'Split Column widths into an array
+F.Intrinsic.String.Split("2000*!*3000*!*3000*!*3000","*!*",V.Local.sColW)
+
+'Enter prompt (VAR3), e.g., "Selct a part"
+F.Intrinsic.UI.Browser("Select Ship-To Address","conX",V.Local.sSQL,V.Local.sCol,V.Local.sColW,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.CallSub(Loadshipto,"ShipID",V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtshiptoid_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtshiptoid_click.End
+
+Program.Sub.LoadShipTo.Start
+F.Intrinsic.Control.SetErrorHandler("LoadShipTo_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.Control.If(V.Args.ShipID,=,"Default")
+	'load ship default from customer master if args passed from cmdpacklist_click
+	F.Intrinsic.String.Build("Select * from v_CUSTOMER_SHIPTO where CUSTOMER = '{0}'",V.Global.sCustomer,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		Gui.SS_F_ShipTo.txtShipToID.Text("Default")
+		Gui.SS_F_ShipTo.txtName.Text(V.ODBC.conX!rst.FieldValTrim!NAME_CUSTOMER_SHIP)
+		Gui.SS_F_ShipTo.txtAddr1.Text(V.ODBC.conX!rst.FieldValTrim!ADDRESS1_SHIP)
+		Gui.SS_F_ShipTo.txtAddr2.Text(V.ODBC.conX!rst.FieldValTrim!ADDRESS2_SHIP)
+		Gui.SS_F_ShipTo.txtCity.Text(V.ODBC.conX!rst.FieldValTrim!CITY_SHIP)
+		Gui.SS_F_ShipTo.txtState.Text(V.ODBC.conX!rst.FieldValTrim!STATE_SHIP)
+		Gui.SS_F_ShipTo.txtZip.Text(V.ODBC.conX!rst.FieldValTrim!CODE_ZIP_SHIP)
+		Gui.SS_F_ShipTo.txtCountry.Text(V.ODBC.conX!rst.FieldValTrim!COUNTRY_SHIP)
+		Gui.SS_F_ShipTo.txtAttn.Text(V.ODBC.conX!rst.FieldValTrim!ATTENTION_SHIP)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	'LOAD ADDRESS LINES 3 - 5
+	F.Intrinsic.String.Build("Select * from v_CUSTOMER_INTL where CUSTOMER = '{0}'",V.Global.sCustomer,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		Gui.SS_F_ShipTo.txtAddr3.Text(V.ODBC.conX!rst.FieldValTrim!ADDRESS3_SHIP)
+		Gui.SS_F_ShipTo.txtAddr4.Text(V.ODBC.conX!rst.FieldValTrim!ADDRESS4_SHIP)
+		Gui.SS_F_ShipTo.txtAddr5.Text(V.ODBC.conX!rst.FieldValTrim!ADDRESS5_SHIP)
+	F.Intrinsic.Control.Endif
+	F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.Else
+	'else use passed Shipto Id and load from Args(Shipto ID) from OE_MULTI_SHIP
+	F.Intrinsic.String.Build("Select * from v_OE_MULTI_SHIP where CUSTOMER = '{0}' and SHIP_SEQ = '{1}'",V.Global.sCustomer,V.Args.ShipID,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		Gui.SS_F_ShipTo.txtShipToID.Text(V.Args.ShipID)
+		Gui.SS_F_ShipTo.txtName.Text(V.ODBC.conX!rst.FieldValTrim!CUSTOMER_NAME)
+		Gui.SS_F_ShipTo.txtAddr1.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ADDRESS1)
+		Gui.SS_F_ShipTo.txtAddr2.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ADDRESS2)
+		Gui.SS_F_ShipTo.txtAddr3.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ADDRESS3)
+		Gui.SS_F_ShipTo.txtAddr4.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ADDRESS4)
+		Gui.SS_F_ShipTo.txtAddr5.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ADDRESS5)
+		Gui.SS_F_ShipTo.txtCity.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_CITY)
+		Gui.SS_F_ShipTo.txtState.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_STATE)
+		Gui.SS_F_ShipTo.txtZip.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ZIP)
+		Gui.SS_F_ShipTo.txtCountry.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_COUNTRY)
+		Gui.SS_F_ShipTo.txtAttn.Text(V.ODBC.conX!rst.FieldValTrim!SHIP_ATTENTION)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadShipTo_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadShipTo.End
+
+Program.Sub.BuildStyleShipTo.Start
+F.Intrinsic.Control.SetErrorHandler("BuildStyleShipTo_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Build Style for SS_F_ShipTo.fg_RvwPackList
+Gui.SS_F_ShipTo.fg_RvwPackList.Cols(12)
+Gui.SS_F_ShipTo.fg_RvwPackList.Rows(1)
+'Gui.SS_F_ShipTo.fg_RvwPackList.Rows(2)
+Gui.SS_F_ShipTo.fg_RvwPackList.FixedRows(1)
+
+'Checkbox Select Row
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(0,0,"Item#")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(2,0,"Format","Alignment",4)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,0,"Type","Locked",True)
+
+'Job
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(1,0,"Job")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,1,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,1,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,1,"fontstyle","Size",10)
+
+'Suffix
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(2,0,"Suffix")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,2,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,2,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,2,"fontstyle","Size",10)
+'Sequence
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(3,0,"Seq")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,3,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,3,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,3,"fontstyle","Size",10)
+'Part
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(4,0,"Part")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,4,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,4,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,4,"fontstyle","Size",10)
+'Description
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(5,0,"Description")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,5,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,5,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,5,"fontstyle","Size",10)
+'WO Quantity
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(6,0,"Order Qty")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,6,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,6,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,6,"fontstyle","Size",10)
+'Staged Quantity
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(7,0,"Staged Qty")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,7,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,7,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,7,"fontstyle","Size",10)
+'Pick Quantity
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(8,0,"Qty to Ship")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,8,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,8,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,8,"Color","Back",V.Color.LtGray)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,8,"fontstyle","Size",10)
+'Build Style for control structure to notify user that there is a qty of zero on the picked items.
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(3,8,"Color","Back",V.Color.LtRed)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(3,8,"fontstyle","Size",10)
+'Quantity in Bin
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(9,0,"Qty Bin/Truck")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,9,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,9,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,9,"fontstyle","Size",11)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(3,9,"Color","Back",V.Color.Yellow)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(3,9,"fontstyle","Size",10)
+
+'Qty Shipped
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(10,0,"Qty Shpped")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,10,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,10,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,10,"fontstyle","Size",10)
+
+'Job Due Date
+Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(11,0,"Due Date")
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,11,"Type","Locked",True)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,11,"Format","Alignment",2)
+Gui.SS_F_ShipTo.fg_RvwPackList.BuildStyle(1,11,"fontstyle","Size",10)
+
+
+Gui.SS_F_ShipTo.fg_RvwPackList.SetColumnPercentages(".05:.05:.05:.05:.15:.2:.07:.07:.07:.07:.07:.1")
+Gui.SS_F_ShipTo.fg_RvwPackList.ApplyStyle(0,2)
+Gui.SS_F_ShipTo.fg_RvwPackList.ApplyStyle(1,1)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("BuildStyleShipTo_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.BuildStyleShipTo.End
+
+program.sub.cmdprintpacklist_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdprintpacklist_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sFullUDT.Declare(String)
+V.Local.i.Declare(Float)
+V.Local.iRows.Declare(Float)
+V.Local.sRet.Declare(String)
+V.Local.iRet.Declare(Float)
+V.Local.bStatus.Declare(Boolean)
+V.Local.sSql.Declare(String)
+V.Local.iPackListNo.Declare(Float)
+V.Local.iStaged.Declare(Float)
+V.Local.iShipped.Declare(Float)
+V.Local.sDate.Declare(String)
+V.Local.iC.Declare(Long)
+
+V.Local.sBin.declare(String)
+V.Local.sLoopBin.Declare(String)
+
+F.Intrinsic.Control.CallSub(Getbin)
+
+'Split loop bins for saving to tables
+F.Intrinsic.String.Split(V.Args.LoopBin,",",V.Local.sLoopBin)
+
+F.Intrinsic.Control.If(V.Args.Return,<>,"")
+	F.Intrinsic.String.Build("({0})",V.Args.Return,V.Local.sBin)
+F.Intrinsic.Control.EndIf
+
+
+'Print Packing list after Review screen is verified.
+F.Global.BI.GetIDFromName("GCG_3992_BI_PACK_LIST.rpt",V.Global.iRptID)
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Global.BI.StartLogging(V.Global.iBIRunID,V.Global.iRptID,0,"GCG_3992_BI_PACK_LIST.rpt",V.Global.iBILogID)
+
+'Set Packing List Number
+'Set to 1 for first record no results
+V.Local.iPackListNo.Set(1)
+V.Local.sSql.Set("Select Max(PACK_LIST_NO) as PackListNo from GCG_3992_SHIP_HDR")
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	V.Local.iPackListNo.Set(V.ODBC.conX!rst.FieldVal!PackListNo)
+	F.Intrinsic.Math.Add(V.Local.iPackListNo,1,V.Local.iPackListNo)
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uPackLines!PACK_LIST_NO,V.Local.iPackListNo)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'Write to the Shipment header since we should only have one shipment going out
+F.ODBC.Connection!conX.OpenLocalRecordsetRW("rstSaveHead","SELECT * FROM GCG_3992_SHIP_HDR")
+F.ODBC.Connection!conX.OpenLocalRecordsetRW("rstSaveBIHead","SELECT * FROM GCG_3992_BI_SHIP_HDR")
+
+'Load uPackHdr with Customer info for shipping and Billing
+V.uGlobal.uPackHdr.Redim(0,0)
+F.Intrinsic.String.Build("Select * from v_CUSTOMER_MASTER where CUSTOMER = '{0}'",V.Global.sCustomer,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	'Update Shipment Header
+	F.ODBC.conX!rstSaveHead.AddNew
+	F.ODBC.conX!rstSaveHead.Set!PACK_LIST_NO(V.Local.iPackListNo)
+	F.ODBC.conX!rstSaveHead.Set!PROJECT(V.Global.sProject.Trim)
+	F.ODBC.conX!rstSaveHead.Set!DATE_SHIPPED(V.Ambient.Date)
+	F.ODBC.conX!rstSaveHead.Set!CUSTOMER(V.Global.sCustomer)
+	F.ODBC.conX!rstSaveHead.Set!NAME_CUSTOMER(V.ODBC.conX!rst.FieldValTrim!NAME_CUSTOMER)
+	F.ODBC.conX!rstSaveHead.Set!BILL_ADDR1(V.ODBC.conX!rst.FieldValTrim!ADDRESS1)
+	F.ODBC.conX!rstSaveHead.Set!BILL_ADDR2(V.ODBC.conX!rst.FieldValTrim!ADDRESS2)
+	'Update BI Shipment Header
+	F.ODBC.conX!rstSaveBIHead.AddNew
+	F.ODBC.conX!rstSaveBIHead.Set!BIRUNID(V.Global.iBIRunID)
+	F.ODBC.conX!rstSaveBIHead.Set!PACK_LIST_NO(V.Local.iPackListNo)
+	F.ODBC.conX!rstSaveBIHead.Set!PROJECT(V.Global.sProject.Trim)
+	F.ODBC.conX!rstSaveBIHead.Set!DATE_SHIPPED(V.Ambient.Date)
+	F.ODBC.conX!rstSaveBIHead.Set!CUSTOMER(V.Global.sCustomer)
+	F.ODBC.conX!rstSaveBIHead.Set!NAME_CUSTOMER(V.ODBC.conX!rst.FieldValTrim!NAME_CUSTOMER)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_ADDR1(V.ODBC.conX!rst.FieldValTrim!ADDRESS1)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_ADDR2(V.ODBC.conX!rst.FieldValTrim!ADDRESS2)
+	'Get ADDR3-5 from CUSTOMER_INTL
+	F.Intrinsic.String.Build("Select * from v_CUSTOMER_INTL where CUSTOMER = '{0}'",V.Global.sCustomer,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst2",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst2.EOF,<>,True)
+		F.ODBC.conX!rstSaveHead.Set!BILL_ADDR3(V.ODBC.conX!rst2.FieldValTrim!ADDRESS3)
+		F.ODBC.conX!rstSaveHead.Set!BILL_ADDR4(V.ODBC.conX!rst2.FieldValTrim!ADDRESS4)
+		F.ODBC.conX!rstSaveHead.Set!BILL_ADDR5(V.ODBC.conX!rst2.FieldValTrim!ADDRESS5)
+		F.ODBC.conX!rstSaveBIHead.Set!BILL_ADDR3(V.ODBC.conX!rst2.FieldValTrim!ADDRESS3)
+		F.ODBC.conX!rstSaveBIHead.Set!BILL_ADDR4(V.ODBC.conX!rst2.FieldValTrim!ADDRESS4)
+		F.ODBC.conX!rstSaveBIHead.Set!BILL_ADDR5(V.ODBC.conX!rst2.FieldValTrim!ADDRESS5)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst2.Close
+	F.ODBC.conX!rstSaveHead.Set!BILL_CITY(V.ODBC.conX!rst.FieldValTrim!CITY)
+	F.ODBC.conX!rstSaveHead.Set!BILL_STATE(V.ODBC.conX!rst.FieldValTrim!STATE)
+	F.ODBC.conX!rstSaveHead.Set!BILL_ZIP(V.ODBC.conX!rst.FieldValTrim!ZIP)
+	F.ODBC.conX!rstSaveHead.Set!BILL_COUNTRY(V.ODBC.conX!rst.FieldValTrim!COUNTRY)
+	F.ODBC.conX!rstSaveHead.Set!BILL_ATTN(V.ODBC.conX!rst.FieldValTrim!ATTENTION)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ADDR1(V.Screen.SS_F_ShipTo!txtAddr1.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ADDR2(V.Screen.SS_F_ShipTo!txtAddr2.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ADDR3(V.Screen.SS_F_ShipTo!txtAddr3.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ADDR4(V.Screen.SS_F_ShipTo!txtAddr4.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ADDR5(V.Screen.SS_F_ShipTo!txtAddr5.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_CITY(V.Screen.SS_F_ShipTo!txtCity.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_STATE(V.Screen.SS_F_ShipTo!txtState.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ZIP(V.Screen.SS_F_ShipTo!txtZip.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_COUNTRY(V.Screen.SS_F_ShipTo!txtCountry.Text)
+	F.ODBC.conX!rstSaveHead.Set!SHIP_ATTN(V.Screen.SS_F_ShipTo!txtAttn.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_CITY(V.ODBC.conX!rst.FieldValTrim!CITY)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_STATE(V.ODBC.conX!rst.FieldValTrim!STATE)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_ZIP(V.ODBC.conX!rst.FieldValTrim!ZIP)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_COUNTRY(V.ODBC.conX!rst.FieldValTrim!COUNTRY)
+	F.ODBC.conX!rstSaveBIHead.Set!BILL_ATTN(V.ODBC.conX!rst.FieldValTrim!ATTENTION)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ADDR1(V.Screen.SS_F_ShipTo!txtAddr1.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ADDR2(V.Screen.SS_F_ShipTo!txtAddr2.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ADDR3(V.Screen.SS_F_ShipTo!txtAddr3.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ADDR4(V.Screen.SS_F_ShipTo!txtAddr4.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ADDR5(V.Screen.SS_F_ShipTo!txtAddr5.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_CITY(V.Screen.SS_F_ShipTo!txtCity.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_STATE(V.Screen.SS_F_ShipTo!txtState.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ZIP(V.Screen.SS_F_ShipTo!txtZip.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_COUNTRY(V.Screen.SS_F_ShipTo!txtCountry.Text)
+	F.ODBC.conX!rstSaveBIHead.Set!SHIP_ATTN(V.Screen.SS_F_ShipTo!txtAttn.Text)
+	F.ODBC.conX!rstSaveHead.Update
+	F.ODBC.conX!rstSaveBIHead.Update
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rstSaveHead.Close
+F.ODBC.conX!rstSaveBIHead.Close
+F.ODBC.conX!rst.Close
+
+'Build String to load uPackLines from fg_RvwPackList
+V.Local.iRows.Set(V.Screen.SS_F_ShipTo!fg_RvwPackList.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+F.Intrinsic.Control.For(V.Local.i,0,V.Local.iRows,1)
+	Gui.SS_F_ShipTo.fg_RvwPackList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFullUDT,V.Local.sRow,V.Ambient.NewLine,V.Local.sFullUDT)
+F.Intrinsic.Control.Next(V.Local.i)
+
+V.uGlobal.uPackLines.Redim(-1,-1)
+'Load fg_RvwPackList FlexGrid to UDT uPackLines
+F.Intrinsic.Variable.LoadUDTFromString(V.uGlobal.uPackLines,"ITEM_NUM*!*JOB*!*SUFFIX*!*JOB_SEQ*!*PART*!*DESCRIPTION*!*QTY_ORDER*!*QTY_STAGED*!*QTY_SHIPPED*!*QTY_BO*!*DATE_SHIPPED",V.Local.sFullUDT,V.Ambient.NewLine,"*!*",False)
+
+'Set BI RunID
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uPackLines!BIRUNID,V.Global.iBIRunID)
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uPackHdr!BIRUNID,V.Global.iBIRunID)
+
+'Fomat Date for Saving to BI Table
+F.Intrinsic.Variable.SetUDTFieldDateMask(V.uGlobal.uPackHdr!DATE_SHIPPED,"YYYY-MM-DD")
+
+'Set Project and PACK_LIST_NO for uPackLines
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uPackLines!PROJECT,V.Global.sProject.Trim)
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uPackLines!PACK_LIST_NO,V.Local.iPackListNo)
+
+'UPDATE GCG_3992_WIP_BIN table Qty Shipped, Increase existing Qty, and updating BIN Qty's on Trucks
+F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uPackLines.LBound,V.uGlobal.uPackLines.UBound,1)
+
+'	'Get BIN
+'	F.Intrinsic.String.Build("select BIN from GCG_3992_WIP_BIN where JOB = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and SUFFIX = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and SEQUENCE= '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' ",V.uGlobal.uPackLines(v.Local.i)!JOB,V.uGlobal.uPackLines(v.Local.i)!SUFFIX,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ,V.Local.sSql)
+'	F.ODBC.Connection!conX.OpenRecordsetRO("rstCS",V.Local.sSql)
+'	F.Intrinsic.Control.If(V.ODBC.conX!rstCS.EOF,<>,True)
+'		'Set current ordinal in packlines with codesort.
+'		V.uGlobal.uPackLines(v.Local.i)!BIN.Set(V.ODBC.conX!rstCS.FieldVal!BIN)
+'	F.Intrinsic.Control.EndIf
+'	F.ODBC.conX!rstCS.Close
+
+'Delete statements have been commented out for now. User doesn't want any records deleted, want to keep for now though to make sure updating this way doesn't have adverse effects
+	'This should always be zero since we are always shipping everything.
+	F.Intrinsic.Math.Sub(V.uGlobal.uPackLines(v.Local.i)!QTY_BO,V.uGlobal.uPackLines(v.Local.i)!QTY_SHIPPED,V.Local.iStaged)
+	'if spectific BIN was Selected delete that record for that BIN
+'	F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlBin.Text,=,"")
+'	F.Intrinsic.Control.If(V.Local.sBin,=,"")
+		'delete all BIN Records because full qty was shipped for all
+'		F.Intrinsic.Control.If(V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,<>,"")
+			'SQL for record including SEQUENCE
+'			F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(SEQUENCE)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}'  and ltrim(rtrim(BIN)) <> 'SHPCMP'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sSql)
+'		F.Intrinsic.Control.Else
+'			'SQL for record w/NO SEQUENCE
+'			F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' and ltrim(rtrim(BIN)) <> 'SHPCMP'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sSql)
+'		F.Intrinsic.Control.EndIf
+'		F.ODBC.Connection!conX.Execute(V.Local.sSql)
+'	F.Intrinsic.Control.Else
+		'if specific Bin, then decrease qty or delete record if qty is zero
+'		F.Intrinsic.Control.If(V.Local.iStaged,=,0)
+			'SQL for record including SEQUENCE
+'			F.Intrinsic.Control.If(V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,<>,"")
+'				'SQL for record including SEQUENCE
+''				F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(SEQUENCE)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}' and ltrim(rtrim(BIN)) = '\\\\\\\\\\\\\\\{4\\\\\\\\\\\\\\\}'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+'				F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(SEQUENCE)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}' and ltrim(rtrim(BIN)) IN \\\\\\\\\\\\\\\{4\\\\\\\\\\\\\\\} ",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sBin,V.Local.sSql)
+'			F.Intrinsic.Control.Else
+'				'SQL for record w/NO SEQUENCE
+''				F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}'  and BIN = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+'				F.Intrinsic.String.Build("delete from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}'  and BIN IN \\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sBin,V.Local.sSql)
+'
+'			F.Intrinsic.Control.EndIf
+'			F.odbc.connection!conX.execute(V.local.sSql)
+'		F.Intrinsic.Control.Else
+			'Because we aren't deleting the records anymore, we need to update the Qty_BIN to zero for each record it is now all or nothing. If they are shipping the BIN then that entire bin is being shipped.
+			F.Intrinsic.Control.If(V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,<>,"")
+				'SQL for record including SEQUENCE
+'				F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}'  and BIN = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+				F.Intrinsic.String.Build("Update GCG_3992_WIP_BIN Set QTY_BIN = 0 where ltrim(rtrim(JOB)) = '{0}' and  ltrim(rtrim(SUFFIX)) = '{1}' and ltrim(rtrim(SEQUENCE)) = '{2}' and ltrim(rtrim(PART)) = '{3}' and ltrim(rtrim(BIN)) IN {4} ",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sBin,V.Local.sSql)
+				F.ODBC.Connection!conX.Execute(V.Local.sSql)
+			F.intrinsic.control.else
+				'SQL for record w/NO SEQUENCE
+'				F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '\\\\\\\\\\\\\\\{0\\\\\\\\\\\\\\\}' and  ltrim(rtrim(SUFFIX)) = '\\\\\\\\\\\\\\\{1\\\\\\\\\\\\\\\}' and ltrim(rtrim(PART)) = '\\\\\\\\\\\\\\\{2\\\\\\\\\\\\\\\}' and BIN = '\\\\\\\\\\\\\\\{3\\\\\\\\\\\\\\\}'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+				F.Intrinsic.String.Build("Update GCG_3992_WIP_BIN Set QTY_BIN = 0 where ltrim(rtrim(JOB)) = '{0}' and  ltrim(rtrim(SUFFIX)) = '{1}' and ltrim(rtrim(PART)) = '{2}' and BIN IN {3}",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sBin,V.Local.sSql)
+				F.ODBC.Connection!conX.Execute(V.Local.sSql)
+			F.intrinsic.control.endif
+'			F.ODBC.Connection!conX.OpenRecordsetRW("rst",V.Local.sSql)
+'			F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+'				F.ODBC.conX!rst.Set!QTY_BIN(V.Local.iStaged)
+'				F.ODBC.conX!rst.Update
+'			F.Intrinsic.Control.EndIf
+'			F.ODBC.conX!rst.Close
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Endif
+
+	'UPDATE SHPCMP Record where Qty Shipped is maintained
+	F.Intrinsic.Control.If(V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,<>,"")
+		F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where  ltrim(rtrim(JOB)) = '{0}' and  ltrim(rtrim(SUFFIX)) = '{1}' and ltrim(rtrim(SEQUENCE)) = '{2}' and ltrim(rtrim(PART)) = '{3}' and ltrim(rtrim(BIN)) = 'SHPCMP'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!JOB_SEQ.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sSql)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where ltrim(rtrim(JOB)) = '{0}' and  ltrim(rtrim(SUFFIX)) = '{1}' and ltrim(rtrim(PART)) = '{2}' and ltrim(rtrim(BIN)) = 'SHPCMP'",V.uGlobal.uPackLines(v.Local.i)!JOB.Trim,V.uGlobal.uPackLines(v.Local.i)!SUFFIX.Trim,V.uGlobal.uPackLines(v.Local.i)!PART.Trim,V.Local.sSql)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conX.OpenRecordsetRW("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		'update new quantity in SHPCMP Bin"Staged"
+		F.Intrinsic.Math.Add(V.ODBC.conX!rst.FieldVal!QTY_SHIPPED,V.uGlobal.uPackLines(v.Local.i)!QTY_SHIPPED,V.Local.iShipped)
+		'Calculate Qty_BO fot uPackLines = Qty_Order -(existing shipped + current shipment)
+		F.Intrinsic.Math.Sub(V.uGlobal.uPackLines(v.Local.i)!QTY_ORDER,V.Local.iShipped,V.Local.iRet)
+		V.uGlobal.uPackLines(v.Local.i)!QTY_BO.Set(V.Local.iRet)
+		'Update Qty Shipped
+		F.ODBC.conX!rst.Set!QTY_SHIPPED(V.Local.iShipped)
+		F.ODBC.conX!rst.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+
+	'Get CODE_SORT
+	F.Intrinsic.String.Build("select CODE_SORT from v_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}' ",V.uGlobal.uPackLines(v.Local.i)!JOB,V.uGlobal.uPackLines(v.Local.i)!SUFFIX,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rstCS",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rstCS.EOF,<>,True)
+		'Set current ordinal in packlines with codesort.
+		V.uGlobal.uPackLines(v.Local.i)!CODE_SORT.Set(V.ODBC.conX!rstCS.FieldVal!CODE_SORT)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rstCS.Close
+
+	'Open up records to write to the shipment tables and BI tables
+
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rstSaveLine","SELECT * FROM GCG_3992_SHIP_LNS")
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rstSaveBILine","SELECT * FROM GCG_3992_BI_SHIP_LNS")
+
+	'Loop through the bins and add a record for each Shipment Bin combination
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sLoopBin.UBound,1)
+		F.Intrinsic.String.Build("SELECT QTY_BO FROM GCG_3992_WIP_BIN WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND BIN = '{3}'",V.uGlobal.uPackLines(V.Local.i)!JOB,V.uGlobal.uPackLines(V.Local.i)!SUFFIX,V.uGlobal.uPackLines(V.Local.i)!JOB_SEQ,V.Local.sLoopBin(V.Local.iC).Trim,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenLocalRecordsetRO("rstQtyBo",V.Local.sSql)
+
+		F.Intrinsic.Control.If(V.ODBC.conX!rstQtyBo.EOF,<>,True)
+			'Update Shipment Lines
+			F.ODBC.conX!rstSaveLine.AddNew
+			F.ODBC.conX!rstSaveLine.Set!PACK_LIST_NO(V.uGlobal.uPackLines(V.Local.i)!PACK_LIST_NO)
+			F.ODBC.conX!rstSaveLine.Set!PROJECT(V.uGlobal.uPackLines(V.Local.i)!PROJECT)
+			F.ODBC.conX!rstSaveLine.Set!JOB(V.uGlobal.uPackLines(V.Local.i)!JOB)
+			F.ODBC.conX!rstSaveLine.Set!SUFFIX(V.uGlobal.uPackLines(V.Local.i)!SUFFIX)
+			F.ODBC.conX!rstSaveLine.Set!JOB_SEQ(V.uGlobal.uPackLines(V.Local.i)!JOB_SEQ)
+			F.ODBC.conX!rstSaveLine.Set!PART(V.uGlobal.uPackLines(V.Local.i)!PART)
+			F.ODBC.conX!rstSaveLine.Set!UM(V.uGlobal.uPackLines(V.Local.i)!UM)
+			F.ODBC.conX!rstSaveLine.Set!DESCRIPTION(V.uGlobal.uPackLines(V.Local.i)!DESCRIPTION)
+			F.ODBC.conX!rstSaveLine.Set!QTY_ORDER(V.uGlobal.uPackLines(V.Local.i)!QTY_ORDER)
+			F.ODBC.conX!rstSaveLine.Set!QTY_BO(V.ODBC.conX!rstQtyBo.FieldVal!QTY_BO)
+			F.ODBC.conX!rstSaveLine.Set!QTY_SHIPPED(V.uGlobal.uPackLines(V.Local.i)!QTY_SHIPPED)
+			F.ODBC.conX!rstSaveLine.Set!BIN(V.Local.sLoopBin(V.Local.iC))
+			F.ODBC.conX!rstSaveLine.Update
+
+			'Save BI Shipment Line
+			F.ODBC.conX!rstSaveBILine.AddNew
+			F.ODBC.conX!rstSaveBILine.Set!BIRUNID(V.uGlobal.uPackLines(V.Local.i)!BIRUNID)
+			F.ODBC.conX!rstSaveBILine.Set!PACK_LIST_NO(V.uGlobal.uPackLines(V.Local.i)!PACK_LIST_NO)
+			F.ODBC.conX!rstSaveBILine.Set!PROJECT(V.uGlobal.uPackLines(V.Local.i)!PROJECT)
+			F.ODBC.conX!rstSaveBILine.Set!JOB(V.uGlobal.uPackLines(V.Local.i)!JOB)
+			F.ODBC.conX!rstSaveBILine.Set!SUFFIX(V.uGlobal.uPackLines(V.Local.i)!SUFFIX)
+			F.ODBC.conX!rstSaveBILine.Set!JOB_SEQ(V.uGlobal.uPackLines(V.Local.i)!JOB_SEQ)
+			F.ODBC.conX!rstSaveBILine.Set!PART(V.uGlobal.uPackLines(V.Local.i)!PART)
+			F.ODBC.conX!rstSaveBILine.Set!UM(V.uGlobal.uPackLines(V.Local.i)!UM)
+			F.ODBC.conX!rstSaveBILine.Set!DESCRIPTION(V.uGlobal.uPackLines(V.Local.i)!DESCRIPTION)
+			F.ODBC.conX!rstSaveBILine.Set!QTY_ORDER(V.uGlobal.uPackLines(V.Local.i)!QTY_ORDER)
+			F.ODBC.conX!rstSaveBILine.Set!QTY_BO(V.ODBC.conX!rstQtyBo.FieldVal!QTY_BO)
+			F.ODBC.conX!rstSaveBILine.Set!QTY_SHIPPED(V.uGlobal.uPackLines(V.Local.i)!QTY_SHIPPED)
+			F.ODBC.conX!rstSaveBILine.Set!CODE_SORT(V.uGlobal.uPackLines(V.Local.i)!CODE_SORT)
+			F.ODBC.conX!rstSaveBILine.Set!BIN(V.Local.sLoopBin(V.Local.iC))
+			F.ODBC.conX!rstSaveBILine.Update
+		F.Intrinsic.Control.EndIf
+
+		F.ODBC.conX!rstQtyBo.Close
+	F.Intrinsic.Control.Next(V.Local.iC)
+
+	F.ODBC.conX!rstSaveHead.Close
+	F.ODBC.conX!rstSaveLine.Close
+	F.ODBC.conX!rstSaveBIHead.Close
+	F.ODBC.conX!rstSaveBILine.Close
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.Global.BI.StopLogging(V.Global.iBILogID)
+'Run Report
+Gui.SS_F_ShipTo..Visible(false)
+F.Intrinsic.Control.CallSub(Callbi)
+Gui.F_PrjPickList..Enabled(True)
+F.Intrinsic.Control.callsub(Loadgrid_rev)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdprintpacklist_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdprintpacklist_click.End
+
+Program.Sub.Load_fgRvwPackList.Start
+F.Intrinsic.Control.SetErrorHandler("Load_fgRvwPackList_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Retrieve seleted rows from Pick List Grid and load those selections to grid, Same number of columns,
+'only checkbox will be replaced with an incrementing number showing number of lines(items)
+'that will be on the packing list
+V.Local.i.Declare(Float)
+V.Local.iRows.Declare(Float)
+V.Local.sRow.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iRet.Declare(Float)
+V.Local.iStaged.Declare(Float)
+V.Local.iRows_2.Declare(Float)
+V.Local.iTotRows.Declare(Float)
+
+V.Global.bIssue.Set(False)
+'Get Row Count from Pick List Grid
+V.Local.iRows.Set(V.Screen.F_PrjPickList!fg_PickList.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+'loop through picklist grid and read row, if checked then add row to Review Grid
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRows,1)
+	Gui.F_PrjPickList.fg_PickList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Control.If(V.Local.sRow(0).Trim,=,1)
+		F.Intrinsic.Math.Add(V.Local.iRows_2,1,V.Local.iRows_2)
+		'Replace Checkbox Val with Item Number incrementing
+		V.Local.sRow(0).Set(V.Local.iRows_2)
+		'Increase Total rows on fg_RvwPackList Grid to add lines at the same time
+		F.Intrinsic.Math.Add(V.Local.iRows_2,1,V.Local.iTotRows)
+		Gui.SS_F_ShipTo.fg_RvwPackList.Rows(V.Local.iTotRows)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(0,V.Local.iRows_2,V.Local.sRow(0).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(1,V.Local.iRows_2,V.Local.sRow(1).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(2,V.Local.iRows_2,V.Local.sRow(2).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(3,V.Local.iRows_2,V.Local.sRow(3).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(4,V.Local.iRows_2,V.Local.sRow(4).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(5,V.Local.iRows_2,V.Local.sRow(5).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(6,V.Local.iRows_2,V.Local.sRow(6).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(7,V.Local.iRows_2,V.Local.sRow(7).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(8,V.Local.iRows_2,V.Local.sRow(8).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(9,V.Local.iRows_2,V.Local.sRow(9).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(10,V.Local.iRows_2,V.Local.sRow(10).Trim)
+		Gui.SS_F_ShipTo.fg_RvwPackList.TextMatrix(11,V.Local.iRows_2,V.Local.sRow(11).Trim)
+		'Get Staged Qty and compare to Pick Qty, if Pick Qty <> Qty On Trucks, Color Pick Qty Cell and Staged Qty Cell
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(9),V.Local.iStaged)
+		F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(8),V.Local.iRet)
+'		F.Intrinsic.Control.If(V.Local.iRet,<>,V.Local.iStaged)
+'			F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlBin.Text,=,"")
+'				F.Intrinsic.UI.Msgbox("If shipping Partial Quantities, Must Select Bin to Ship","SelectionError")
+'				V.Global.bIssue.Set(True)
+'				F.Intrinsic.Control.ExitSub
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.Local.iRet,>,V.Local.iStaged)
+			Gui.SS_F_ShipTo.fg_RvwPackList.ApplyStyle(V.Local.iRows_2,3)
+			'disable print packing list button becaue quantities incorrect
+			Gui.SS_F_ShipTo.cmdPrintPackList.Enabled(false)
+		F.Intrinsic.Control.Else
+			Gui.F_PrjPickList.fg_PickList.ApplyStyle(V.Local.iRows_2,1)
+			Gui.SS_F_ShipTo.cmdPrintPackList.Enabled(True)
+		F.Intrinsic.Control.EndIf
+		'If Pick Qty is < 1 then Color Cell Red
+		F.Intrinsic.Control.If(V.Local.iRet,<,1)
+			Gui.SS_F_ShipTo.fg_RvwPackList.ApplyStyle(V.Local.iRows_2,3)
+			'disable print packing list button becaue quantities exist with zero
+			Gui.SS_F_ShipTo.cmdPrintPackList.Enabled(false)
+		F.Intrinsic.Control.Else
+			Gui.SS_F_ShipTo.cmdPrintPackList.Enabled(True)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+'if no rows selected then do not fire screen
+F.Intrinsic.Control.If(V.Local.iRows_2,=,0)
+	F.Intrinsic.UI.Msgbox("No Rows Selected to Ship","Select Rows to Ship")
+	V.Global.bIssue.Set(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Load_fgRvwPackList_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Load_fgRvwPackList.End
+
+program.sub.cmdprintpicklist_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdprintpicklist_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Print Pick List, loop through Pick List Grid and print all rows where Pick Qty > 0
+V.Local.i.Declare(Float)
+V.Local.iC.Declare(String)
+V.Local.iRows.Declare(Float)
+V.Local.sRow.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.iRet.Declare(Float)
+V.Local.iRet2.Declare(Float)
+V.Local.iUB.Declare(Float)
+V.Local.sBins.Declare(String)
+V.Local.bStatus.Declare(Boolean)
+
+'Set bStatus to True by default
+V.Local.bStatus.Set(True)
+
+'Get Report RunID
+F.Global.BI.GetIDFromName("GCG_3992_BI_PICK_LIST.rpt",V.Global.iRptID)
+F.Global.BI.GetRunID(V.Global.iBIRunID)
+F.Global.BI.StartLogging(V.Global.iBIRunID,V.Global.iRptID,0,"GCG_3992_BI_PICK_LIST.rpt",V.Global.iBILogID)
+'commit screen entries before proceeding
+Gui.F_PrjPickList.fg_PickList.Commit
+Gui.F_PrjPickList.fg_PickList.Visible(false)
+V.Local.iRows.Set(V.Screen.F_PrjPickList!fg_PickList.Rows)
+F.Intrinsic.Math.Sub(V.Local.iRows,1,V.Local.iRows)
+'Get the Bin list
+F.Intrinsic.Control.CallSub(Getbin)
+V.Local.sBins.Set(V.Args.LoopBin)
+'Split Bin List
+F.Intrinsic.String.Split(V.Local.sBins,",",V.Local.sBins)
+
+V.Local.iUB.Set(-1)
+V.uGlobal.uPackLines.Redim(0,0)
+'loop through grid, if pick Qty > 0 add to list
+'reuse upack lines to store info that will be printed on report
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRows,1)
+	Gui.F_PrjPickList.fg_PickList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Math.ConvertToFloat(V.Local.sRow(8),V.Local.iRet)
+	F.Intrinsic.Control.If(V.Local.iRet,>,0)
+		F.Intrinsic.Control.For(V.Local.iC,0,V.Local.sBins.UBound,1)
+			'Get the actual quantity picked for that selected bin; the total of all the bins picked quantities should equal the quantity shipped; this will also let us know if that BIN exists for that Job Suffix Sequence
+			F.Intrinsic.String.Build("SELECT QTY_BO FROM GCG_3992_WIP_BIN WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQUENCE = '{2}' AND BIN = '{3}'",V.Local.sRow(1).Trim,V.Local.sRow(2).Trim,V.Local.sRow(3).Trim,V.Local.sBins(V.Local.iC).Trim,V.Local.sSql)
+			F.ODBC.Connection!conX.OpenLocalRecordsetRO("rstPick",V.Local.sSql)
+
+			F.Intrinsic.Control.If(V.ODBC.conX!rstPick.EOF,<>,True)
+				F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+				V.uGlobal.uPackLines.RedimPreserve(V.uGlobal.uPackLines.LBound,V.Local.iUB)
+				V.uGlobal.uPackLines(v.Local.iUB)!BIRUNID.Set(V.Global.iBIRunID)
+				V.uGlobal.uPackLines(v.Local.iUB)!PROJECT.Set(V.Global.sProject.Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!JOB.Set(V.Local.sRow(1).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!SUFFIX.Set(V.Local.sRow(2).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!JOB_SEQ.Set(V.Local.sRow(3).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!PART.Set(V.Local.sRow(4).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!DESCRIPTION.Set(V.Local.sRow(5).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!QTY_ORDER.Set(V.Local.sRow(6).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!QTY_STAGED.Set(V.Local.sRow(7).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!QTY_PICKED.Set(V.ODBC.conX!rstPick.FieldVal!QTY_BO)
+				'Set Bin information
+				V.uGlobal.uPackLines(V.Local.iUB)!BIN.Set(V.Local.sBins(V.Local.iC))
+				V.uGlobal.uPackLines(v.Local.iUB)!QTY_BO.Set(V.Local.sRow(9).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!QTY_SHIPPED.Set(V.Local.sRow(10).Trim)
+				V.uGlobal.uPackLines(v.Local.iUB)!DATE_SHIPPED.Set(V.Local.sRow(11).Trim)
+				'Get Phase
+				F.Intrinsic.String.Build("SELECT PHASE from V_JOB_HEADER where JOB = '{0}' and SUFFIX = '{1}'",V.uGlobal.uPackLines(v.Local.iUB)!JOB,V.uGlobal.uPackLines(v.Local.iUB)!SUFFIX,V.Local.sSql)
+				F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					V.uGlobal.uPackLines(v.Local.iUB)!PHASE.Set(V.ODBC.conX!rst.FieldValTrim!PHASE)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conX!rst.Close
+			F.Intrinsic.Control.EndIf
+
+			F.ODBC.conX!rstPick.Close
+		F.Intrinsic.Control.Next(V.Local.iC)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+'exit sub if quantities still off
+F.Intrinsic.Control.If(V.Local.bStatus,=,False)
+	F.Intrinsic.UI.Msgbox("Pick Quantity cannot be > Staged Quantity","Quantity Error")
+	Gui.F_PrjPickList.fg_PickList.Visible(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'check to see if UDT has any values, if not then user did not enter in pic quantities
+F.Intrinsic.Control.If(V.Local.iUB,=,-1)
+	F.Intrinsic.UI.Msgbox("Must enter in Pick Quantities","Selection Error")
+	Gui.F_PrjPickList.fg_PickList.Visible(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Change to match table field names
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!BIRUNID,"BIRUNID")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!PROJECT,"PROJECT")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!JOB,"JOB")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!SUFFIX,"SUFFIX")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!JOB_SEQ,"JOB_SEQ")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!PART,"PART")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!DESCRIPTION,"DESCRIPTION")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!QTY_ORDER,"QTY_ORDER")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!QTY_STAGED,"QTY_STAGED")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!QTY_PICKED,"QTY_PICK")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!QTY_BO,"QTY_BINS")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!QTY_SHIPPED,"QTY_SHIPPED")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!DATE_SHIPPED,"DATE_DUE")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!PHASE,"PHASE")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!PACK_LIST_NO,"")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!UM,"")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uPackLines!BIN,"BIN")
+
+'Save Report data to BI Table
+F.ODBC.Connection!conX.OpenRecordsetRW("rst","SELECT * from GCG_3992_BI_PICK_LST")
+F.Intrinsic.Variable.SaveUDTToRecordSet("conX","rst","v.uGlobal.uPackLines")
+F.ODBC.conX!rst.Close
+
+F.Global.BI.StopLogging(V.Global.iBILogID)
+'Run Report
+F.Intrinsic.Control.CallSub(Callbi)
+F.Intrinsic.Control.callsub(Loadgrid_rev)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdprintpicklist_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdprintpicklist_click.End
+
+Program.Sub.CompleteProject.Start
+F.Intrinsic.Control.SetErrorHandler("CompleteProject_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sDate.Declare(String)
+
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+F.Intrinsic.String.Build("UPDATE GCG_3992_WIP_BIN set DATE_COMPLETED = '{0}' where PROJECT = '{1}'",V.Local.sDate,V.Global.sProject.Trim,V.Local.sSql)
+F.ODBC.Connection!conX.Execute(V.Local.sSql)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CompleteProject_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CompleteProject.End
+
+Program.Sub.GetUnitQtys.Start
+F.Intrinsic.Control.SetErrorHandler("GetUnitQtys_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Float)
+V.Local.sSql.Declare(String)
+
+'Get Unite Quantities sequences <> 999999
+V.Local.i.Set(V.Args.Position)
+F.Intrinsic.String.Build("Select hours_actual from v_Job_Operations where Job = '{0}' and Suffix = '{1}' and Seq = '{2}'",V.uGlobal.uProject(v.Local.i)!JOB,V.uGlobal.uProject(v.Local.i)!SUFFIX,V.uGlobal.uProject(v.Local.i)!SEQUENCE,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	V.uGlobal.uProject(v.Local.i)!QTY_ORDER.Set(V.ODBC.conX!rst.FieldVal!Hours_Actual)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GetUnitQtys_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GetUnitQtys.End
+
+program.sub.ss_f_jobsincomplete_unload.start
+F.Intrinsic.Control.SetErrorHandler("ss_f_jobsincomplete_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_F_JobsIncomplete..Visible(false)
+Gui.F_PrjPickList..Visible(True)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ss_f_jobsincomplete_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.ss_f_jobsincomplete_unload.End
+
+program.sub.ss_f_shipto_unload.start
+F.Intrinsic.Control.SetErrorHandler("ss_f_shipto_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_F_ShipTo..Visible(false)
+Gui.F_PrjPickList..Enabled(True)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ss_f_shipto_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.ss_f_shipto_unload.End
+
+program.sub.lvwjobs_click.start
+F.Intrinsic.Control.SetErrorHandler("lvwjobs_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Fires Work Order View Mode for list view box of incomplete jobs. Sync Mode so only one job at a time
+V.Local.iJob.Declare(Long)
+V.Local.sJob.Declare(String)
+V.Local.sParams.Declare(String)
+
+Gui.SS_F_JobsIncomplete.lvwJobs.RetrieveSelectedListitems(V.Local.sJob)
+Gui.SS_F_JobsIncomplete.lvwJobs.ListitemKeyToOrdinal(V.Local.sJob,V.Local.iJob)
+V.Local.sJob.Set(V.Screen.SS_F_JobsIncomplete!lvwJobs.ListItemText(v.Local.iJob))
+F.Intrinsic.String.Split(V.Local.sJob,"-",V.Local.sJob)
+F.Intrinsic.Control.If(V.Local.sJob.UBound,<,1)
+F.Intrinsic.String.Build("7!*!{0}!*!ZDR!*!A",V.Local.sJob(0).Trim,V.Local.sParams)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A",V.Local.sJob(0).Trim,V.Local.sJob(1).Trim,V.Local.sParams)
+F.Intrinsic.Control.EndIf
+
+F.Global.General.CallWrapperSync(450000,V.Local.sParams)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lvwjobs_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.lvwjobs_click.End
+
+Program.Sub.CheckShipped.Start
+F.Intrinsic.Control.SetErrorHandler("CheckShipped_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'This is called after Main Grid is loaded, if Qty Order = Qty Shipped then Apply style locking columns 0, 8, those are the columns for checking and entering in a qty
+'Buildstyles Reference applying style 7 if true else, style 1
+'Style 7 for Locking Checkbox and Qty to Ship field if Qty order = Qty Shipped, used in CheckShipped Subroutine after loading Grid
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,0,"Type","Locked",True)
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,8,"Type","Locked",True)
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"Type","Locked",True)
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"Type","Locked",True)
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,10,"Color","Back",V.Color.ltRed)
+'Gui.F_PrjPickList.fg_PickList.BuildStyle(7,6,"Color","Back",V.Color.ltRed)
+
+V.Local.i.Declare(Long)
+V.Local.iRows.Declare(Long)
+V.Local.sRow.Declare(String)
+V.Local.iRet.Declare(Float)
+
+F.Intrinsic.Math.Sub(V.Screen.F_PrjPickList!fg_PickList.Rows,1,V.Local.iRows)
+F.Intrinsic.Control.For(V.Local.i,1,V.Local.iRows,1)
+	'Read row
+	Gui.F_PrjPickList.fg_PickList.ReadRow(V.Local.i,V.Local.sRow)
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Control.If(V.Local.sRow(6).Float,=,V.Local.sRow(10).Float)
+		Gui.F_PrjPickList.fg_PickList.ApplyStyle(V.Local.i,7)
+	F.Intrinsic.Control.Else
+		Gui.F_PrjPickList.fg_PickList.RemoveStyle(V.Local.i)
+		Gui.F_PrjPickList.fg_PickList.ApplyStyle(V.Local.i,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CheckShipped_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.CheckShipped.End
+
+Program.Sub.LoadGrid_Rev.Start
+F.Intrinsic.Control.SetErrorHandler("LoadGrid_Rev_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Load Job info based on current project or Phase or Bin
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sTemp.declare(String)
+V.Local.sFullTemp.Declare(String)
+V.Local.i.Declare(Float)
+V.Local.sOrds.Declare(String)
+V.Local.sBin.declare(String)
+
+Gui.F_PrjPickList..Enabled(False)
+
+V.uGlobal.uProject.Redim(-1,-1)
+F.Intrinsic.UI.InvokeWaitDialog("Loading Dashboard")
+'reload grid hide while loading
+Gui.F_PrjPickList.fg_PickList.Visible(False)
+F.Intrinsic.Control.CallSub(Buildstyle)
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!PHASE,"PHASE")
+'Just Project
+'
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+'
+F.Intrinsic.Control.CallSub(Getbin)
+
+'F.Intrinsic.Debug.InvokeDebugger
+'F.Intrinsic.Debug.Stop
+
+F.Intrinsic.Control.If(V.Args.Return,<>,"")
+	F.Intrinsic.String.Build("({0})",V.Args.Return,V.Local.sBin)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.F_PrjPickList!txtProject.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_PrjPickList!ddlPhase.Text,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sBin,=,"")
+	F.Intrinsic.String.Build("Select Job,Suffix,'999999' as Seq,Part,Part_Description as Description,Qty_Customer as Qty_Order,Date_Due,PHASE from v_JOB_HEADER where PROJECT = '{0}'",V.Global.sProject.Trim,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+	'Load Component job suffix date due and phase to temp file used to load component data from job operations
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!Sequence,"Seq")
+	'Allow for PHASE E to still load components
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007",V.Local.sOrds)
+	F.Intrinsic.Control.If(V.Local.sOrds.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sOrds,"*!*",V.Local.sOrds)
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sOrds.LBound,V.Local.sOrds.UBound,1)
+			F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Date_Due,V.uGlobal.uProject(v.Local.i)!PHASE,V.Local.sTemp)
+			F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFullTemp,V.Local.sTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+
+	'now get rid of original component job header detail will be replaced with job operations detail
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007")
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+
+	'loop through temp variable and load all job operations detail for components
+	F.Intrinsic.Control.If(V.Local.sFullTemp.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sFullTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sFullTemp.LBound,V.Local.sFullTemp.UBound,1)
+			F.Intrinsic.Control.If(V.Local.sFullTemp(v.Local.i).Trim,<>,"")
+				F.Intrinsic.String.Split(V.Local.sFullTemp(v.Local.i),"*!*",V.Local.sTemp)
+				F.Intrinsic.String.Build("Select Job, Suffix, Seq, Part, Description, Hours_Estimated as QTY_ORDER, '{0}' as Date_Due, '{1}' as PHASE from v_job_operations where job = '{2}' and suffix = '{3}' and LMO = 'M'",V.Local.sTemp(2).Trim,V.Local.sTemp(3).Trim,V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sSql)
+				F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",True)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conX!rst.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i)
+
+	F.Intrinsic.Control.EndIf
+
+	'Now loop through UDT and Load GCG_3992_WIP_BIN info
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound,1)
+		F.Intrinsic.UI.ChangeWaitStatus("Loading Dashboard",V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound)
+		'Qtyfor Truck Bins and SHipped
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN <> 'SHPCMP' ",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!QTY_Bin.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Pick.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Set Part from GCG WIP BIN table
+		F.Intrinsic.String.Build("Select distinct PART as PART from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!PART.Set(V.ODBC.conX!rst.FieldVal!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Staged Qty BIN = 'SHPCMP'
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN,sum(QTY_SHIPPED) as QTY_SHIPPED from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN ='SHPCMP'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!STAGED.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Shipped.Set(V.ODBC.conX!rst.FieldVal!QTY_SHIPPED)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+	F.Intrinsic.Control.Next(V.Local.i)
+
+'Project and Phase
+F.Intrinsic.Control.Elseif(V.Screen.F_PrjPickList!txtProject.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_PrjPickList!ddlPhase.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Local.sBin,=,"")
+	F.Intrinsic.String.Build("Select Job,Suffix,'999999' as Seq,Part,Part_Description as Description,Qty_Customer as Qty_Order,Date_Due,PHASE from v_JOB_HEADER where PROJECT = '{0}' and PHASE = '{1}'",V.Global.sProject.Trim,V.Screen.F_PrjPickList!ddlPhase.Text,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+
+	'Allow for PHASE E to still load components
+	F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlPhase.Text,=,"E")
+	'Load Component job suffix date due and phase to temp file used to load component data from job operations
+		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!Sequence,"Seq")
+		'Allow for PHASE E to still load components
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007",V.Local.sOrds)
+		F.Intrinsic.Control.If(V.Local.sOrds.Trim,<>,"")
+			F.Intrinsic.String.Split(V.Local.sOrds,"*!*",V.Local.sOrds)
+			F.Intrinsic.Control.For(V.Local.i,V.Local.sOrds.LBound,V.Local.sOrds.UBound,1)
+				F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Date_Due,V.uGlobal.uProject(v.Local.i)!PHASE,V.Local.sTemp)
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFullTemp,V.Local.sTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+			F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.Control.EndIf
+
+		'now get rid of original component job header detail will be replaced with job operations detail
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+		'loop through temp variable and load all job operations detail for components
+		F.Intrinsic.Control.If(V.Local.sFullTemp.Trim,<>,"")
+			F.Intrinsic.String.Split(V.Local.sFullTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+
+			F.Intrinsic.Control.For(V.Local.i,V.Local.sFullTemp.LBound,V.Local.sFullTemp.UBound,1)
+				F.Intrinsic.Control.If(V.Local.sFullTemp(v.Local.i).Trim,<>,"")
+					F.Intrinsic.String.Split(V.Local.sFullTemp(v.Local.i),"*!*",V.Local.sTemp)
+					F.Intrinsic.String.Build("Select Job, Suffix, Seq, Part, Description, Hours_Estimated as QTY_ORDER, '{0}' as Date_Due, '{1}' as PHASE from v_job_operations where job = '{2}' and suffix = '{3}' and LMO = 'M'",V.Local.sTemp(2).Trim,V.Local.sTemp(3).Trim,V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sSql)
+					F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+					F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+						F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",True)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.conX!rst.Close
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.i)
+
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Now loop through UDT and Load GCG_3992_WIP_BIN info
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound,1)
+		F.Intrinsic.UI.ChangeWaitStatus("Loading Dashboard",V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound)
+
+		'Qtyfor Truck Bins and SHipped
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN <> 'SHPCMP' ",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!QTY_Bin.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Pick.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Set Part from GCG WIP BIN table
+		F.Intrinsic.String.Build("Select distinct PART as PART from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!PART.Set(V.ODBC.conX!rst.FieldVal!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Staged Qty BIN = 'SHPCMP'
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN,sum(QTY_SHIPPED) as QTY_SHIPPED from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN ='SHPCMP'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!STAGED.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Shipped.Set(V.ODBC.conX!rst.FieldVal!QTY_SHIPPED)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+	F.Intrinsic.Control.Next(V.Local.i)
+	'Sort UDT by job and suffix , seq
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uProject!Job,False,V.uGlobal.uProject!Suffix,False,V.uGlobal.uProject!Sequence,False)
+
+'Project and Bin
+F.Intrinsic.Control.Elseif(V.Screen.F_PrjPickList!txtProject.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_PrjPickList!ddlPhase.Text,=,"")
+F.Intrinsic.Control.AndIf(V.Local.sBin,<>,"")
+	F.Intrinsic.String.Build("Select Job,Suffix,'999999' as Seq,Part,Part_Description as Description,Qty_Customer as Qty_Order,Date_Due,PHASE from v_JOB_HEADER where PROJECT = '{0}'",V.Global.sProject.Trim,V.Local.sBin,V.Local.sSql)
+
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+
+	'Load Component job suffix date due and phase to temp file used to load component data from job operations
+	F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!Sequence,"Seq")
+
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007",V.Local.sOrds)
+	F.Intrinsic.Control.If(V.Local.sOrds.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sOrds,"*!*",V.Local.sOrds)
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sOrds.LBound,V.Local.sOrds.UBound,1)
+			F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Date_Due,V.uGlobal.uProject(v.Local.i)!PHASE,V.Local.sTemp)
+			F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFullTemp,V.Local.sTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+
+	'now get rid of original component job header detail will be replaced with job operations detail
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007")
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+	'loop through temp variable and load all job operations detail for components
+	F.Intrinsic.Control.If(V.Local.sFullTemp.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sFullTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sFullTemp.LBound,V.Local.sFullTemp.UBound,1)
+			F.Intrinsic.Control.If(V.Local.sFullTemp(v.Local.i).Trim,<>,"")
+				F.Intrinsic.String.Split(V.Local.sFullTemp(v.Local.i),"*!*",V.Local.sTemp)
+				F.Intrinsic.String.Build("Select Job, Suffix, Seq, Part, Description, Hours_Estimated as QTY_ORDER, '{0}' as Date_Due, '{1}' as PHASE from v_job_operations where job = '{2}' and suffix = '{3}' and LMO = 'M'",V.Local.sTemp(2).Trim,V.Local.sTemp(3).Trim,V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sSql)
+				F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+					F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",True)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conX!rst.Close
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+
+	'Now loop through UDT and Load GCG_3992_WIP_BIN info
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound,1)
+		F.Intrinsic.UI.ChangeWaitStatus("Loading Dashboard",V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound)
+
+		'Qtyfor Truck Bins and SHipped
+'		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN = '{3}' ",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN IN {3} ",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Local.sBin,V.Local.sSql)
+
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.FieldVal!QTY_BIN,<>,"")
+				V.uGlobal.uProject(v.Local.i)!QTY_Bin.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+				V.uGlobal.uProject(v.Local.i)!Qty_Pick.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			F.Intrinsic.Control.Else
+				Function.Intrinsic.Variable.UDTFlagOrdinal(V.uGlobal.uProject,True,V.Local.i.String)
+			F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Set Part from GCG WIP BIN table
+		F.Intrinsic.String.Build("Select distinct PART as PART from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!PART.Set(V.ODBC.conX!rst.FieldVal!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Staged Qty BIN = 'SHPCMP'
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN,sum(QTY_SHIPPED) as QTY_SHIPPED from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN ='SHPCMP' ",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!STAGED.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Shipped.Set(V.ODBC.conX!rst.FieldVal!QTY_SHIPPED)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+	F.Intrinsic.Control.Next(V.Local.i)
+
+	'Flag all and unflag those that = Bin selected
+'	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uProject)
+'	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!Qty_Bin,0)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+
+	'Sort UDT by job and suffix, seq, qty_bin
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uProject!Job,False,V.uGlobal.uProject!Suffix,False,V.uGlobal.uProject!Sequence,False,V.uGlobal.uProject!Qty_Bin,False)
+
+'Project Phase and Bin
+F.Intrinsic.Control.Elseif(V.Screen.F_PrjPickList!txtProject.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Screen.F_PrjPickList!ddlPhase.Text,<>,"")
+F.Intrinsic.Control.AndIf(V.Local.sBin,<>,"")
+	F.Intrinsic.String.Build("Select Job,Suffix,'999999' as Seq,Part,Part_Description as Description,Qty_Customer as Qty_Order,Date_Due,PHASE from v_JOB_HEADER where PROJECT = '{0}' and PHASE = '{1}' ",V.Global.sProject.Trim,V.Screen.F_PrjPickList!ddlPhase.Text,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+
+	'Allow for PHASE E to still load components
+	F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlPhase.Text,=,"E")
+		'Load Component job suffix date due and phase to temp file used to load component data from job operations
+		F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!Sequence,"Seq")
+		'Allow for PHASE E to still load components
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007",V.Local.sOrds)
+		F.Intrinsic.Control.If(V.Local.sOrds.Trim,<>,"")
+			F.Intrinsic.String.Split(V.Local.sOrds,"*!*",V.Local.sOrds)
+			F.Intrinsic.Control.For(V.Local.i,V.Local.sOrds.LBound,V.Local.sOrds.UBound,1)
+				F.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Date_Due,V.uGlobal.uProject(v.Local.i)!PHASE,V.Local.sTemp)
+				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sFullTemp,V.Local.sTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+			F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.Control.EndIf
+
+		'now get rid of original component job header detail will be replaced with job operations detail
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!PHASE,"E",V.uGlobal.uProject!Suffix,"007")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+		'loop through temp variable and load all job operations detail for components
+		F.Intrinsic.Control.If(V.Local.sFullTemp.Trim,<>,"")
+			F.Intrinsic.String.Split(V.Local.sFullTemp,V.Ambient.NewLine,V.Local.sFullTemp)
+			F.Intrinsic.Control.For(V.Local.i,V.Local.sFullTemp.LBound,V.Local.sFullTemp.UBound,1)
+				F.Intrinsic.Control.If(V.Local.sFullTemp(v.Local.i).Trim,<>,"")
+					F.Intrinsic.String.Split(V.Local.sFullTemp(v.Local.i),"*!*",V.Local.sTemp)
+					F.Intrinsic.String.Build("Select Job, Suffix, Seq, Part, Description, Hours_Estimated as QTY_ORDER, '{0}' as Date_Due, '{1}' as PHASE from v_job_operations where job = '{2}' and suffix = '{3}' and LMO = 'M'",V.Local.sTemp(2).Trim,V.Local.sTemp(3).Trim,V.Local.sTemp(0).Trim,V.Local.sTemp(1).Trim,V.Local.sSql)
+					F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+					F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+						F.Intrinsic.Variable.LoadUDTFromRecordset("conX","rst","v.uGlobal.uProject",True)
+					F.Intrinsic.Control.EndIf
+					F.ODBC.conX!rst.Close
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Now loop through UDT and Load GCG_3992_WIP_BIN info
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound,1)
+		F.Intrinsic.UI.ChangeWaitStatus("Loading Dashboard",V.Local.i,V.uGlobal.uProject.LBound,V.uGlobal.uProject.UBound)
+
+		'Qtyfor Truck Bins and SHipped
+'		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN = '{3}'",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Screen.F_PrjPickList!ddlBin.Text,V.Local.sSql)
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN IN {3}",V.uGlobal.uProject(v.Local.i)!Job.trim,V.uGlobal.uProject(v.Local.i)!Suffix.trim,V.uGlobal.uProject(v.Local.i)!Sequence.trim,V.Local.sBin,V.Local.sSql)
+
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			F.Intrinsic.Control.If(V.ODBC.conX!rst.FieldVal!QTY_BIN,<>,"")
+				V.uGlobal.uProject(v.Local.i)!QTY_Bin.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+				V.uGlobal.uProject(v.Local.i)!Qty_Pick.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			F.Intrinsic.Control.Else
+				Function.Intrinsic.Variable.UDTFlagOrdinal(V.uGlobal.uProject,True,V.Local.i.String)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			Function.Intrinsic.Variable.UDTFlagOrdinal(V.uGlobal.uProject,True,V.Local.i.String)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Set Part from GCG WIP BIN table
+		F.Intrinsic.String.Build("Select distinct PART as PART from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!PART.Set(V.ODBC.conX!rst.FieldVal!PART)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+		'Staged Qty BIN = 'SHPCMP'
+		F.Intrinsic.String.Build("Select SUM(QTY_BIN) as QTY_BIN,sum(QTY_SHIPPED) as QTY_SHIPPED from GCG_3992_WIP_BIN where JOB = '{0}' and SUFFIX = '{1}' and SEQUENCE = '{2}' and BIN ='SHPCMP'",V.uGlobal.uProject(v.Local.i)!Job,V.uGlobal.uProject(v.Local.i)!Suffix,V.uGlobal.uProject(v.Local.i)!Sequence,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.uGlobal.uProject(v.Local.i)!STAGED.Set(V.ODBC.conX!rst.FieldVal!QTY_BIN)
+			V.uGlobal.uProject(v.Local.i)!Qty_Shipped.Set(V.ODBC.conX!rst.FieldVal!QTY_SHIPPED)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+
+	F.Intrinsic.Control.Next(V.Local.i)
+
+	'Flag all and unflag those that = Bin selected
+		'Flag all and unflag those that = Bin selected
+'	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uProject)
+'	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!Qty_Bin,0)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+
+	'Sort UDT by job and suffix,seq, qty bin
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uProject!Job,False,V.uGlobal.uProject!Suffix,False,V.uGlobal.uProject!Sequence,False,V.uGlobal.uProject!Qty_Bin,False)
+
+F.Intrinsic.Control.EndIf
+
+'get rid of jobs with blank suffix
+F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uProject!Suffix,"")
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uProject)
+
+
+'Load UDT to grid
+Gui.F_PrjPickList.fg_PickList.LoadFromUDT("V.uGlobal.uProject","Select*!*JOB*!*SUFFIX*!*SEQUENCE*!*PART*!*DESCRIPTION*!*QTY_ORDER*!*STAGED*!*QTY_PICK*!*QTY_BIN*!*QTY_SHIPPED*!*DATE_DUE",1)
+
+'Check shipped Qty vs Order
+F.Intrinsic.Control.CallSub(Checkshipped)
+
+'show grid again
+Gui.F_PrjPickList.fg_PickList.Visible(true)
+
+'Check to see if Project is Completed and if Complete Display Message and Lock Buttons
+F.Intrinsic.String.Build("Select TOP 1 DATE_COMPLETED from GCG_3992_WIP_BIN where PROJECT = '{0}' and DATE_COMPLETED > '1900-01-01' order by DATE_COMPLETED DESC",V.Global.sProject.Trim,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	F.Intrinsic.String.Build("***Project Completed on {0}***",V.ODBC.conX!rst.FieldVal!DATE_COMPLETED,V.Local.sRet)
+	Gui.F_PrjPickList.lblMsg.Caption(V.Local.sRet)
+	Gui.F_PrjPickList.lblMsg.Visible(True)
+	Gui.F_PrjPickList.cmdCompletePrj.Enabled(false)
+	Gui.F_PrjPickList.cmdPackList.Enabled(false)
+	Gui.F_PrjPickList.cmdPrintPickList.Enabled(false)
+	Gui.F_PrjPickList.fg_PickList.Enabled(false)
+F.Intrinsic.Control.Else
+	Gui.F_PrjPickList.lblMsg.Caption("")
+	Gui.F_PrjPickList.lblMsg.Visible(True)
+	Gui.F_PrjPickList.cmdCompletePrj.Enabled(True)
+'	Gui.F_PrjPickList.cmdPackList.Enabled(True)
+	Gui.F_PrjPickList.cmdPrintPickList.Enabled(True)
+	Gui.F_PrjPickList.fg_PickList.Enabled(True)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uProject!PHASE,"")
+
+F.Intrinsic.UI.CloseWaitDialog
+
+Gui.F_PrjPickList..Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadGrid_Rev_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadGrid_Rev.End
+
+Program.Sub.Frm_Attributes.Start
+F.Intrinsic.Control.SetErrorHandler("Frm_Attributes_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'Form attributes
+
+Gui.F_PrjPickList..FontSize(16)
+Gui.F_PrjPickList.cmdCompletePrj.FontStyle(True,False,False,False)
+Gui.F_PrjPickList.cmdPackList.FontStyle(True,False,False,False)
+Gui.F_PrjPickList.cmdPrintPickList.FontStyle(True,False,False,False)
+Gui.F_PrjPickList.cmdProjectStatus.FontStyle(True,False,False,False)
+Gui.F_PrjPickList.cmdRefresh.FontStyle(True,False,False,False)
+gui.F_PrjPickList.cmdCompletePrj.fontsize(12)
+gui.F_PrjPickList.cmdPackList.fontsize(12)
+gui.F_PrjPickList.cmdPrintPickList.fontsize(12)
+gui.F_PrjPickList.cmdProjectStatus.fontsize(12)
+gui.F_PrjPickList.ddlBin.fontsize(12)
+Gui.F_PrjPickList.ddlBin.FontStyle(True,False,False,False)
+gui.F_PrjPickList.ddlPhase.fontsize(12)
+Gui.F_PrjPickList.ddlPhase.FontStyle(True,False,False,False)
+Gui.F_PrjPickList.txtProject.FontSize(12)
+Gui.F_PrjPickList.txtProject.FontStyle(True,False,False,False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Frm_Attributes_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Frm_Attributes.End
+
+Program.Sub.scrollh1_change.Start
+F.Intrinsic.Control.SetErrorHandler("scrollh1_change_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.CallSub(Scrollh1_scroll)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("scrollh1_change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.scrollh1_change.End
+
+Program.Sub.scrollh1_scroll.Start
+F.Intrinsic.Control.SetErrorHandler("scrollh1_scroll_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iScroll.Declare(Long)
+V.Local.iLeft.Declare(Long)
+
+V.Local.iScroll.Set(V.Screen.F_PrjPickList!scrollh1.Value)
+'keep track of position of grid and scroll bar, resetting position of grid each time, this helps with different resolutions and wide screens.
+F.Intrinsic.Control.If(V.Screen.F_PrjPickList!scrollh1.Value,=,0)
+	Gui.F_PrjPickList.fg_PickList.Position(200,V.Screen.F_PrjPickList!fg_PickList.Top)
+	V.Global.iScroll.Set(0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Global.iScroll,>,V.Local.iScroll)
+	F.Intrinsic.Math.Add(V.Screen.F_PrjPickList!fg_PickList.Left,300,V.Local.iLeft)
+
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.Sub(V.Screen.F_PrjPickList!fg_PickList.Left,300,V.Local.iLeft)
+F.Intrinsic.Control.EndIf
+V.Global.iScroll.Set(V.Local.iScroll)
+
+Gui.F_PrjPickList.fg_PickList.Position(V.Local.iLeft,V.Screen.F_PrjPickList!fg_PickList.Top)
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("scrollh1_scroll_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.scrollh1_scroll.End
+
+program.sub.cmdgridleft_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdgridleft_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+'move grid
+F.Intrinsic.Control.If(V.Screen.F_PrjPickList.Left,<>,200)
+	F.Intrinsic.Math.Sub(V.Screen.F_PrjPickList!fg_PickList.Left,200,V.Local.i)
+	Gui.F_PrjPickList.fg_PickList.Position(V.Local.i,V.Screen.F_PrjPickList!fg_PickList.Top)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdgridleft_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdgridleft_click.End
+
+program.sub.cmdgridright_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdgridright_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+'Move grid
+
+F.Intrinsic.Control.If(V.Screen.F_PrjPickList!fg_PickList.Left,<,200)
+	F.Intrinsic.Math.Add(V.Screen.F_PrjPickList!fg_PickList.Left,200,V.Local.i)
+	Gui.F_PrjPickList.fg_PickList.Position(V.Local.i,V.Screen.F_PrjPickList!fg_PickList.Top)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdgridright_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdgridright_click.End
+
+program.sub.cmdrefresh_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdrefresh_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.callsub(Loadgrid_rev)
+
+
+V.Local.sRet1.Declare(String)
+
+
+Gui.F_PrjPickList.lvwBin.RetrieveCheckedListItems(V.Local.sRet1)
+
+
+F.Intrinsic.Control.If(V.Local.sRet1,=,"***NORETURN***")
+	'Reload Bins if Phase is selected or unselected
+'	F.Intrinsic.Control.If(V.Screen.F_PrjPickList!ddlBin.Text,=,"")
+		F.Intrinsic.Control.CallSub(Load_ddlbin)
+'	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdrefresh_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdrefresh_click.End
+
+Program.Sub.getBin.Start
+F.Intrinsic.Control.SetErrorHandler("getBin_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet1.Declare(String)
+V.Local.sRet2.Declare(String)
+V.Local.sBin.declare(String)
+'Using this list of bins for looping since the other list is built specifically for the queries
+V.Local.sLoopBin.Declare(String)
+V.Local.j.Declare(Long)
+V.Local.iOrd.Declare(Long)
+
+
+Gui.F_PrjPickList.lvwBin.RetrieveCheckedListItems(V.Local.sRet1)
+
+
+F.Intrinsic.Control.If(V.Local.sRet1,<>,"***NORETURN***")
+	F.intrinsic.string.split(V.Local.sRet1,"*!*",V.Local.sRet1)
+	F.intrinsic.control.for(V.Local.j,0,V.Local.sRet1.UBound,1)
+		Gui.F_PrjPickList.lvwBin.ListitemKeyToOrdinal(V.Local.sRet1(V.Local.j),V.Local.iOrd)
+		V.Local.sRet2.Set(V.Screen.F_PrjPickList!lvwBin.ListItemTextExtended(V.Local.iOrd))
+		F.intrinsic.string.split(V.Local.sRet2,"*!*",V.Local.sRet2)
+		'Building differently based on whether it's the first BIN or more
+		F.Intrinsic.Control.If(V.Local.sBin,=,"")
+			F.Intrinsic.String.Build("'{0}'",V.Local.sRet2(0),V.Local.sBin)
+			V.Local.sLoopBin.Set(V.Local.sRet2(0))
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0},'{1}'",V.Local.sBin,V.Local.sRet2(0),V.Local.sBin)
+			F.Intrinsic.String.Build("{0},{1}",V.Local.sLoopBin,V.Local.sRet2(0),V.Local.sLoopBin)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.j)
+	F.Intrinsic.Variable.AddRV("Return",V.Local.sBin)
+	F.Intrinsic.Variable.AddRV("LoopBin",V.Local.sLoopBin)
+F.Intrinsic.Control.Else
+	'Make sure that there are values being passed back
+	F.Intrinsic.Variable.AddRV("Return","")
+	F.Intrinsic.Variable.AddRV("LoopBin","")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("getBin_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.getBin.End
+
+program.sub.fg_picklist_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("fg_picklist_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_PrjPickList.fg_PickList.Commit
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fg_picklist_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.fg_picklist_lostfocus.End
+
+program.sub.lvwbin_itemclick.start
+F.Intrinsic.Control.SetErrorHandler("lvwbin_itemclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sKey.Declare(String)
+
+Gui.F_PrjPickList.lvwBin.RetrieveCheckedListItems(V.Local.sKey)
+
+F.Intrinsic.Control.If(V.Local.sKey,<>,"***NORETURN***")
+	Gui.F_PrjPickList.cmdPackList.Enabled(True)
+F.Intrinsic.Control.Else
+	Gui.F_PrjPickList.cmdPackList.Enabled(False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lvwbin_itemclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_PRJ_SHIPPING_DASHBOARD.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_prjpicklist_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.lvwbin_itemclick.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_PRINT_PRJ_PICK_LIST$}$SUPERVSR$}$3/25/2015$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$3. An additional GAB script will be added to a custom menu item
+(Shipping/Receiving>Transactions>Print Project PickList). This GAB script will load a flexgrid with
+all job parent parts for a selected Project/Phase (Phase is optional). Columns are listed below.
+User required to enter the "Pick Qty". User will then click "Print" and program will load a report
+that shows all selections in the grid, where "Pick Qty" > 1. Component parts will be listed for the
+Job in which the suffix = '007' and phase = 'E'. Report should include all fields that are included in
+the dashboard. Report will be grouped by Phase, if phase was selected in dashboard.
+Additionally, a drop down selection for "Bin" will be available that will filter grid by the current Bin
+in table "1". Also, a "Packing List" button will beadded that will use the "Qty On Truck" as the
+shipped qty. If a specific "Bin" is selected, the "Qty On Truck" will reflect the quantity in that
+specific Bin. The Packing Slip report should mock, as much as possible, the standard Packing List
+Report. Packing list number should be read/updated from the Company Options. For all products
+that are "Shipped" by printing the packing slip, the records will be removed from table "1" and
+added to an additional table (ref Table "2") that will signify shipped items. This table will need to
+be taken into consideration during all the above quantity calculations. A "Complete Project" button
+will also be added that will store each Job/Suffix/Shipped Qty to an additional custom table (ref
+Table "3") and then DELETE all records for the specified project from tables 1 and 2. 1 last button
+will be added, "Project Status" that will query allrecords in table 3, for jobs related to the selected
+project. It will compare all qtys in table "3" withthe job header qty. If total qty shipped in table 3 is
+less than the job header qty, display a listview containing each of the jobs "not complete". If all
+jobs are found to be complete, show a message "Project Complete".
+A. Job
+B. Suffix
+C. Sequence (Only populated when the Suffix = '007'and Phase = 'E')
+D. Part
+E. Description
+F. WO Qty
+G. Staged Qty (Qty from table "1" where BIN = 'SHPCMP')
+H. Pick Qty (Default to '0.00'. User will enter qtymanually)
+I. Qty in Bin (If Bin selection is blank, or bin isnot between A and Z, then Qty from table "1" where
+BIN is between 'A' and 'Z'. If Bin selection is notblank, and is between A and Z, then show qty
+only in that bin.)
+Page 2of 4
+12/31/2014 http://gss2k3web2/Customer/Quote/Quote_View_IH.asp?sType=View&iQNo=6304&iQ...
+J. Job Due Date (Header due date, including Suffix = '007' and Phase = 'E')
+4. Core Global Shop- WIR002.
+A. Add GAB copybooks etc to add necessary infrastructure to call GAB. This includes generating
+copybook from service web etc.
+B. Add a Post-process hook after the call to
+Issue Material (jb0320) when the calling program isWIR100 and the return code from jb0320 (ws-rc) is zeroes. Pass the following variables over toGAB in the HOOK01-ADDITIONAL-DATA (This
+will also be an async process hook as well):
+
+Program.Sub.Comments.End
+
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::
+SS_Form1.CTRL{{NAME::lblCustomer\\TYPE::1\\CAPTION::Name\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form1.CTRL{{NAME::txtCustomer\\TYPE::2\\CAPTION::Customer\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+
+SS_Form2{{CAPTION::Select Ship-To Address
+SS_Form2.CTRL{{NAME::txtShipToID\\TYPE::2\\CAPTION::Ship-To ID\\TABSTOP::0\\GROUP::-1\\BROWSER::1\\SIZE::1
+SS_Form2.CTRL{{NAME::txtName\\TYPE::2\\CAPTION::Name\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAddr1\\TYPE::2\\CAPTION::Address 1\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAddr2\\TYPE::2\\CAPTION::Address 2\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAddr3\\TYPE::2\\CAPTION::Address 3\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAddr4\\TYPE::2\\CAPTION::Address 4\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAddr5\\TYPE::2\\CAPTION::Address 5\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtCity\\TYPE::2\\CAPTION::City\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtState\\TYPE::2\\CAPTION::State\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtZip\\TYPE::2\\CAPTION::Zip\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtCountry\\TYPE::2\\CAPTION::Coutry\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+SS_Form2.CTRL{{NAME::txtAttn\\TYPE::2\\CAPTION::Attention\\TABSTOP::0\\GROUP::-1\\BROWSER::0\\SIZE::1
+
+SS_Form3{{CAPTION::Jobs Incomplete
+SS_Form3.CTRL{{NAME::lvwJobs\\TYPE::7\\CAPTION::Incomplete Work Orders\\GROUP::-1\\BROWSER::0\\SIZE::1
+
+Program.Sub.ScreenSS.End
+
