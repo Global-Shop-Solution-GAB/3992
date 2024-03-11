@@ -1,0 +1,445 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.bSuccess.Declare(Boolean,False)
+Variable.Global.sHeader.Declare(String)
+Variable.Global.sDetails.Declare(String)
+Variable.Global.sFromBin.Declare(String)
+Variable.Global.sToBin.Declare(String)
+Variable.Global.sPart.Declare(String)
+Variable.Global.iQty.Declare(Float,0)
+Variable.Global.sJob.Declare(String)
+Variable.Global.sSuf.Declare(String)
+Variable.Global.sPhase.Declare(String)
+Variable.Global.sResults.Declare(String)
+Variable.Global.sTXID.Declare(String)
+Variable.Global.bTXStatus.Declare(Boolean,False)
+Variable.Global.iOrdQty.Declare(Float,0)
+Variable.Global.sDescription.Declare(String)
+Variable.Global.sProject.Declare(String)
+Variable.Global.sSequence.Declare(String)
+Variable.Global.ExceptionWO.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sHeader.Declare(String)
+V.Local.sLabels.Declare(String)
+V.Local.TXID.Declare(String)
+
+'**** COMMENTS ****
+'1. Custom Mobile "WIP/Bin to Bin" Transaction (Customer responsible to configure the mobile transaction
+'and send the Transaction ID, and list of all labels contained within the transaction. Customer also responsible
+'to send the information to GSS prior to development)
+
+'The current WIP to Bin Mobile transaction will not accomplish required tasks. For that reason,
+'a custom mobile transaction will be created for this process.
+
+'This custom mobile transaction will prompt user for a scanned value containing the following string:
+'Job-Suffix-Part-Description-Project-Phase. User will also be prompted with 2 drop down lists,
+'"From Bin" and "To Bin" containing a list of Bins. The lists of Bins are to be maintained by the Customer
+'within the Custom Mobile Transaction maintenance. Additionally, the user will be prompted for a quantity.
+
+'Once user clicks "Submit" the record will be handled as follows:
+'--------------------------------------------------------------------------------
+'A. Break up the scanned value to get each individual value.
+'--------------------------------------------------------------------------------
+'B. If the "From Bin" is blank, the record will be treated as a "WIP to Bin" transaction.
+'(WIP to Bin in this reference is a custom method, and does not represent the standard WIP to Bin Process).
+'If the "From Bin" is populated with a Bin, the record will be treated as a "Bin to Bin" transaction.
+'(Bin to Bin in this reference is a custom method, and does not represent the standard Bin to Bin process.
+'--------------------------------------------------------------------------------
+'C. Records that are submitted via this process will be added to a custom table (Ref: Table "1").
+'This table will contain relevant fields to be able to track where
+'(Bin) certain Work Orders are located during the manufacturing/shipment process.
+'--------------------------------------------------------------------------------
+'D. This process will provide exception handling to prevent total quantities in all bins,
+'for the specified Job/Suffix does not exceed the total quantity that is being produced on the Work Order.
+'Additionally, the "Bin to Bin" process will not allow for a quantity transfer greater than the amount that exists in the originating bin.
+
+'Set transaction ID
+V.Global.sTXID.Set(V.Passed.DATA-TRANSID)
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.Intrinsic.Control.CallSub(Gettxdetails)
+
+'Check Status this far
+F.Intrinsic.Control.If(V.Global.bTXStatus,=,True)
+	F.Intrinsic.Control.CallSub(Process)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.CallSub(Postresults)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_BIN_TO_BIN_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.GetTXDetails.Start
+F.Intrinsic.Control.SetErrorHandler("GetTXDetails_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sScan.Declare(String)
+V.Local.bStatus.Declare(Boolean)
+V.Local.sSql.Declare(String)
+V.Local.iWOQty.Declare(Float)
+V.Local.iRemaining.Declare(Float)
+V.Local.sRet.declare(String)
+V.Local.sExceptionWO.Declare(String)
+
+f.Global.mobile.getcustomheader(v.Global.sTXID,v.Global.sHeader)
+F.Intrinsic.String.Split(V.Global.sHeader,"*!*",V.Global.sHeader)
+'Get Label Data
+f.Global.mobile.getcustomline(v.Global.sTXID,"conX",v.Global.sDetails)
+F.Intrinsic.String.Split(V.Global.sDetails,"*!*",V.Global.sDetails)
+
+'Break up scanned barcode variables.
+V.Local.sScan.Set(V.Global.sDetails(1))
+F.Intrinsic.String.IsInString(V.Global.sDetails(1),"@!@",True,V.Local.bStatus)
+F.Intrinsic.Control.If(V.Local.bStatus,=,False)
+	'New barcode delimeter,1/22/2016
+	F.Intrinsic.String.Split(V.Local.sScan,"!",V.Local.sScan)
+F.Intrinsic.Control.Else
+	'Old barcode delimeter
+	F.Intrinsic.String.Split(V.Local.sScan,"@!@",V.Local.sScan)
+F.Intrinsic.Control.EndIf
+
+'reset boolean for more below.
+V.Local.bStatus.Set(False)
+
+'check scan parameters, must be 4 parameters passed for this transaction
+F.Intrinsic.Control.If(V.Local.sScan.UBound,<>,3)
+	V.Global.sResults.Set("<b>Scanned Parameters Invalid!<br/>Barcode Format Must be Valid Job-Suffix-Part-Phase</b>")
+	V.Global.bTXStatus.Set(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+'Job
+V.Global.sJob.Set(V.Local.sScan(0))
+'Suffix
+V.Global.sSuf.Set(V.Local.sScan(1))
+'Check for valid job
+F.Intrinsic.String.Build("Select * from v_job_header where ltrim(rtrim(job)) + '-' + suffix = '{0}-{1}'",V.Global.sJob,V.Global.sSuf,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+	V.Global.sResults.Set("<b>Invalid Job and Suffix!<br/>Barcode Format Must be Valid Job-Suffix-Part-Phase</b>")
+	F.Intrinsic.Control.Exitsub
+F.Intrinsic.Control.Endif
+F.ODBC.conX!rst.Close
+
+'Sequence
+V.Global.sSequence.Set(V.Global.sDetails(2))
+
+'Check Sequence
+F.Intrinsic.Control.If(V.Global.sSequence.Trim,=,"")
+	V.Global.sResults.Set("<b>***!Sequence Error!***<br/>If Component Part, then Enter Valid Work Order Sequence,Else enter Sequence '999999'")
+	F.Intrinsic.Control.Exitsub
+F.Intrinsic.Control.Elseif(V.Global.sSequence,<>,"999999")
+	F.Intrinsic.Math.IsNumeric(V.Global.sSequence,V.Local.bStatus)
+	F.Intrinsic.Control.If(V.Local.bStatus,=,False)
+		V.Global.sResults.Set("<b>***!Sequence Error!***<br/>If Component Part, then Enter Valid Work Order Sequence,Else enter Sequence '999999'")
+		F.Intrinsic.Control.Exitsub
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("Select * from v_job_operations where ltrim(rtrim(job)) = '{0}' and suffix = '{1}' and Seq = '{2}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+		F.ODBC.conX!rst.Close
+		V.Global.sResults.Set("<b>***!Sequence Error!***<br/>If Component Part, then Enter Valid Work Order Sequence,Else enter Sequence '999999'")
+		F.Intrinsic.Control.Exitsub
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+'Get Quantities
+F.Intrinsic.Control.If(V.Global.sSequence,=,"999999")
+	'WO Quantity
+	F.Intrinsic.String.Build("Select Job,Suffix,Qty_Order,Description from v_job_header where ltrim(rtrim(job)) + '-' + suffix = '{0}-{1}'",V.Global.sJob,V.Global.sSuf,V.Local.sSql)
+F.Intrinsic.Control.Else
+	'Component Part Quantity
+	F.Intrinsic.String.Build("Select Job,Suffix,Hours_Actual as Qty_Order,Description from v_job_Operations where ltrim(rtrim(job)) + '-' + suffix = '{0}-{1}' and Seq = '{2}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Local.sSql)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+	V.Global.sResults.Set("<b>Invalid Job and Suffix!<br/>Barcode Format Must be Valid Job-Suffix-Part-Phase</b>")
+	F.Intrinsic.Control.Exitsub
+F.Intrinsic.Control.Else
+	'set global vars needed for later
+	V.Local.iWOQty.Set(V.ODBC.conX!rst.FieldVal!Qty_Order)
+	V.Global.iOrdQty.Set(V.ODBC.conX!rst.FieldVal!Qty_Order)
+	V.Global.sDescription.Set(V.ODBC.conX!rst.FieldValTrim!Description)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'Qty to Transfer
+F.Intrinsic.Math.IsNumeric(V.Global.sDetails(5),V.Local.bStatus)
+F.Intrinsic.Control.If(V.Local.bStatus,=,False)
+	'if false set Global Boolean to false for results unsuccessful
+	V.Global.sResults.Set("Invalid Quantity Value, Must be numeric > 0")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	'continue setting if true
+	V.Global.iQty.Set(V.Global.sDetails(5))
+F.Intrinsic.Control.EndIf
+
+'From this point on, the exception to these rules are the *****E-007 Work Orders,
+'they can transfer quantities to a shipping bin regardless if sequences are closed and do not do qty checks. these are the nuts and bolts work orders.
+F.Intrinsic.String.Right(V.Global.sJob.Trim,1,V.Local.sRet)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sRet,V.Global.sSuf.Trim,V.Global.ExceptionWO)
+
+'Check to make sure quantity is not greater thatn work order quantity
+F.Intrinsic.Control.If(V.Global.ExceptionWO,<>,"E007")
+	F.Intrinsic.Control.If(V.Global.iQty,>,V.Local.iWOQty)
+		F.Intrinsic.String.Build("<b>***!Quantity Error!***<br/>Transfer Quantity cannot be Greater than Work Order Quantity({0})!<br/></b>",V.Global.iQty,V.Global.sResults)
+		F.Intrinsic.Control.Exitsub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'Part
+V.Global.sPart.Set(V.Local.sScan(2))
+
+'Phase
+V.Global.sPhase.Set(V.Local.sScan(3))
+
+'From Bin
+V.Global.sFromBin.Set(V.Global.sDetails(3))
+
+'To Bin
+V.Global.sToBin.Set(V.Global.sDetails(4))
+F.Intrinsic.Control.If(V.Global.sToBin.Trim,=,"")
+	V.Global.sResults.Set("<b>To Bin can NOT be blank</b><br/>")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'set Project Global Variable will be saved to table as well.
+F.Intrinsic.String.Build("Select Project,Phase from V_JOB_HEADER where ltrim(rtrim(job)) = '{0}' and Suffix = '{1}'",V.Global.sJob,V.Global.sSuf,V.Local.sSql)
+F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+	V.Global.sProject.Set(V.ODBC.conX!rst.FieldValTrim!PROJECT)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'Check to make sure all sequences closed on work order if WIP to Bin Transaction
+F.Intrinsic.Control.If(V.Global.ExceptionWO,<>,"E007")
+	F.Intrinsic.Control.If(V.Global.sFromBin.Trim,=,"None")
+		F.Intrinsic.String.Build("Select Seq from V_JOB_OPERATIONS where LTRIM(RTRIM(FLAG_CLOSED)) <> 'Y' and ltrim(rtrim(job)) = '{0}' and Suffix = '{1}' and SEQ < '995000' and LMO <>'C'",V.Global.sJob,V.Global.sSuf,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			V.Local.sRet.Set("|")
+			F.Intrinsic.Control.DoUntil(V.ODBC.conX!rst.EOF,=,True)
+				F.Intrinsic.String.Build("{0}{1}|",V.local.sRet,V.ODBC.conX!rst.FieldVal!Seq,V.Local.sRet)
+				F.ODBC.conX!rst.MoveNext
+			F.Intrinsic.Control.Loop
+			F.Intrinsic.String.Build("<b>***!Sequences Not Closed!***<br/>{0}</b>",V.Local.sRet,V.Global.sResults)
+			F.Intrinsic.Control.Exitsub
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'If checks have made it all the way through set bTXStatus to true for this portion
+V.Global.bTXStatus.Set(True)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GetTXDetails_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3992_BIN_TO_BIN_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.GetTXDetails.End
+
+Program.Sub.Process.Start
+F.Intrinsic.Control.SetErrorHandler("Process_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.i.Declare(Float)
+V.Local.sDate.Declare(String)
+
+'Write records for Bin Transfer tables
+'  GCG_3992_WIP_BIN
+' "JOB" CHAR(6),
+' "SUFFIX" CHAR(3),
+' "SEQUENCE" CHAR(6),
+' "PART" CHAR(20),
+' "LOCATION" CHAR(2),
+' "BIN" CHAR(6),
+' "DESCRIPTION" CHAR(30),
+' "QTY_BIN" NUMERIC(12,4),
+' "DATE_WIPBIN Date
+
+'format date for update statement
+F.Intrinsic.String.Format(V.Ambient.Date,"YYYY-MM-DD",V.Local.sDate)
+
+'if from bin is blank, treat as WIP to bin and only increase qty in the To Bin
+F.Intrinsic.Control.If(V.Global.sFromBin.Trim,=,"None")
+	'**************WIPTOBIN****************************
+
+	'Check Total in All Bins Plust Qty_SHIPPED, Row for BIN SHPCMP is only one where QTY_SHIPPED Should Have Value
+	F.Intrinsic.String.Build("select (sum(QTY_BIN) + SUM(QTY_SHIPPED)) as QTY_BIN from GCG_3992_WIP_BIN where Job = '{0}' and Suffix = '{1}' and Sequence = '{2}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRW("rst",V.Local.sSql)
+	'If record exists for that bin,job, and suffix then update record
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+		F.Intrinsic.Control.If(V.Global.ExceptionWO,<>,"E007")
+			'check qty + transfer qty and if it is greater than Order Qty then end and send error message
+			F.Intrinsic.Math.Add(V.Global.iQty,V.ODBC.conX!rst.FieldVal!QTY_BIN,V.Local.i)
+			F.Intrinsic.Control.If(V.Local.i,>,V.Global.iOrdQty)
+				'Set Results Message
+				F.Intrinsic.String.Build("<b>***!Quantity Error!***<br/>Total of All Bin Quantities:{0} + Transfer Quantity:{1} is Greater than Order Quantity:{2}</b>",V.ODBC.conX!rst.FieldVal!QTY_BIN,V.Global.iQty,V.Global.iOrdQty,V.Global.sResults)
+				F.Intrinsic.Control.Exitsub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conX!rst.Close
+		'Now checkt o see if BIN exists and if not create new record.
+		F.Intrinsic.String.Build("select * from GCG_3992_WIP_BIN where Job = '{0}' and Suffix = '{1}' and Sequence = '{2}' and BIN = '{3}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Global.sToBin,V.Local.sSql)
+		F.ODBC.Connection!conX.OpenRecordsetRW("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,<>,True)
+			'update qty and date for existing BIN record
+			F.Intrinsic.Math.Add(V.Global.iQty,V.ODBC.conX!rst.FieldVal!QTY_BIN,V.Local.i)
+			F.ODBC.conX!rst.Set!QTY_BIN(V.Local.i)
+			F.ODBC.conX!rst.Set!DATE_WIPBIN(V.Local.sDate)
+			F.ODBC.conX!rst.Update
+		F.Intrinsic.Control.Else
+			'Add New Record for BIN
+			F.ODBC.conX!rst.AddNew
+			F.ODBC.conX!rst.Set!JOB(V.Global.sJob)
+			F.ODBC.conX!rst.Set!SUFFIX(V.Global.sSuf)
+			F.ODBC.conX!rst.Set!Sequence(V.Global.sSequence)
+			F.ODBC.conX!rst.Set!PART(V.Global.sPart)
+			F.ODBC.conX!rst.Set!DESCRIPTION(V.Global.sDescription)
+			F.ODBC.conX!rst.Set!BIN(V.Global.sToBin)
+			F.ODBC.conX!rst.Set!QTY_BIN(V.Global.iQty)
+			F.ODBC.conX!rst.Set!DATE_WIPBIN(V.Local.sDate)
+			F.ODBC.conX!rst.Set!PROJECT(V.Global.sProject)
+			F.ODBC.conX!rst.Set!PHASE(V.Global.sPhase)
+			F.ODBC.conX!rst.Update
+		F.Intrinsic.Control.Endif
+		F.ODBC.conX!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+'****************BINTOBIN**************************
+	'if both bins populated, decrease qty in From Bin and Increase To Bin
+
+	'Open recordset for From Bin to decrease qty
+	F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where job = '{0}' and suffix = '{1}' and Sequence = '{2}' and Bin = '{3}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Global.sFromBin,V.Local.sSql)
+	F.ODBC.Connection!conX.OpenRecordsetRW("rstFrom",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.conX!rstFrom.EOF,<>,True)
+		F.Intrinsic.Control.If(V.ODBC.conX!rstFrom.FieldVal!QTY_BIN,<,V.Global.iQty)
+		F.Intrinsic.Control.AndIf(V.Global.ExceptionWO,<>,"E007")
+			F.Intrinsic.String.Build("<b>***!Quantity Error!***<br/>Transfer Quantity:{0} is greater than Bin:|{1}| Quantity:{2}</b><br/>",V.Global.iQty,V.Global.sFromBin,V.ODBC.conX!rstFrom.FieldVal!QTY_BIN,V.Global.sResults)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.Else
+
+			'update qty and date
+			F.Intrinsic.Math.Sub(V.ODBC.conX!rstFrom.FieldVal!QTY_BIN,V.Global.iQty,V.Local.i)
+			F.ODBC.conX!rstFrom.Set!QTY_BIN(V.Local.i)
+			F.ODBC.conX!rstFrom.Set!DATE_WIPBIN(V.Local.sDate)
+			F.ODBC.conX!rstFrom.Update
+			
+			'Increase Qty in ToBin for that Work Order
+			F.Intrinsic.String.Build("Select * from GCG_3992_WIP_BIN where job = '{0}' and suffix = '{1}' and Sequence = '{2}' and Bin = '{3}'",V.Global.sJob,V.Global.sSuf,V.Global.sSequence,V.Global.sToBin,V.Local.sSql)
+			F.ODBC.Connection!conX.OpenRecordsetRW("rstTo",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.conX!rstTo.EOF,<>,True)
+
+				'If record exists, update quantity
+				'check to make sure if qty in bin+transfer qty is not greater than order qty
+				F.Intrinsic.Math.Add(V.ODBC.conX!rstTo.FieldVal!QTY_BIN,V.Global.iQty,V.Local.i)
+				F.Intrinsic.Control.If(V.Global.iOrdQty,<,V.Local.i)
+				F.Intrinsic.Control.AndIf(V.Global.ExceptionWO,<>,"E007")
+					F.Intrinsic.String.Build("<b>***!Quantity Error!***<br/>Transfer Quantity:{0} + Bin:|{1}| Quantity:{2} is greater than Order Quantity:{3}</b><br/>",V.Global.iQty,V.Global.sToBin,V.ODBC.conX!rstFrom.FieldVal!QTY_BIN,V.Global.iOrdQty,V.Global.sResults)
+					F.Intrinsic.Control.ExitSub
+				F.Intrinsic.Control.Else
+					'update qty and date
+					F.ODBC.conX!rstTo.Set!QTY_BIN(V.Local.i)
+					F.ODBC.conX!rstTo.Set!DATE_WIPBIN(V.Local.sDate)
+					F.ODBC.conX!rstTo.Update
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+
+				'If new record,then create record for that Job,Suf, Bin
+				F.ODBC.Connection!conX.OpenRecordsetRW("rstNew","Select * from GCG_3992_WIP_BIN")
+				F.ODBC.conX!rstNew.AddNew
+				F.ODBC.conX!rstNew.Set!JOB(V.Global.sJob)
+				F.ODBC.conX!rstNew.Set!SUFFIX(V.Global.sSuf)
+				F.ODBC.conX!rstNew.Set!Sequence(V.Global.sSequence)
+				F.ODBC.conX!rstNew.Set!PART(V.Global.sPart)
+				F.ODBC.conX!rstNew.Set!DESCRIPTION(V.Global.sDescription)
+				F.ODBC.conX!rstNew.Set!BIN(V.Global.sToBin)
+				F.ODBC.conX!rstNew.Set!QTY_BIN(V.Global.iQty)
+				F.ODBC.conX!rstNew.Set!DATE_WIPBIN(V.Local.sDate)
+				F.ODBC.conX!rstNew.Set!PROJECT(V.Global.sProject)
+				F.ODBC.conX!rstNew.Set!PHASE(V.Global.sPhase)
+				F.ODBC.conX!rstNew.Update
+				F.ODBC.conX!rstNew.Close
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conX!rstTo.Close
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("<b>***!Bin Error!***<br/>Bin:|{0}| Does not Contain a Record for Work Order:{1}-{2}</b><br/>",V.Global.sFromBin,V.Global.sJob,V.Global.sSuf,V.Global.sResults)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rstFrom.Close
+F.Intrinsic.Control.EndIf
+
+'If checks have made it all the way through set bTXStatus to true for this portion
+V.Global.bTXStatus.Set(True)
+V.Global.bSuccess.Set(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Process_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_BIN_TO_BIN_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Process.End
+
+Program.Sub.PostResults.Start
+F.Intrinsic.Control.SetErrorHandler("PostResults_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'build results messages
+F.Intrinsic.Control.If(V.Global.bSuccess,=,True)
+	'Success message
+	F.Intrinsic.String.Build("Successful Bin Transfer!<br/>Transaction Details:<br/>Part:<b>{0}</b><br>From Bin:<b>{1}</b><br/>To Bin:<b>{2}</b><br/>Quantity:<b>{3}</b><br/><br/>Complete Another Transaction by Clicking Link Below!<br/>",V.Global.sPart,V.Global.sFromBin,V.Global.sToBin,V.Global.iQty,V.Global.sResults)
+F.Intrinsic.Control.Else
+	'error message if transaction not complete
+	F.Intrinsic.String.Build("<b>***Transaction ERROR!***<b><br/>Transaction Details:<br/>Part:<b>{0}</b><br>From Bin:<b>{1}</b><br/>To Bin:<b>{2}</b><br/>Quantity:<b>{3}</b><br/><b>{4}<b><br/><br/>Retry Transaction by Clicking Link Below!<br/>",V.Global.sPart,V.Global.sFromBin,V.Global.sToBin,V.Global.iQty,V.Global.sResults,V.Global.sResults)
+F.Intrinsic.Control.EndIf
+
+'Display Results
+f.Global.mobile.setcustomresult(v.Caller.CompanyCode,v.Global.sTXID,v.Global.sResults)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("PostResults_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_BIN_TO_BIN_MOBILE.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.PostResults.End
+
+
